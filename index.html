@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Canela 1.0</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+	<ul data-role="listview" data-filter="true" data-filter-placeholder="Busca y encontrarás..." data-inset="true">	
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Doctor peticiones servicio</h3>
+				<li>select * from seg2500 where SEG25CODPARAM='SIGNDR_SRQ'</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Dosificaciones con fijar volumen</h3>
+				<li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61swtcteconc = 0</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Dosificaciones vacías</h3>
+				<li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61dose is null</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Dosis en la administración</h3>
+				<li>select * from seg2500 where SEG25CODPARAM like 'MPNODOSIS%'</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Dosis usuales</h3>
+				<li>select * from fch6100</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Eliminar TO-DO</h3>
+				<li>Borrar la SCR1000, que es la tabla donde se guardar la configuración de la pantalla de To-Do por cada usuario.</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Enviar ZPL por CMD</h3>
+				<li>copy C:\Users\jluis\Desktop\lbl4266.prn \\SAVAC\HOS1</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Error en presencia del producto</h3>
+				<li>create or replace synonym savac.pet1002j for pet.pet1002j</li>
+				<li>create or replace synonym savac.pet1003j for pet.pet1003j</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Errores incremental</h3>
+				<li>select * from EST.EST4500 where est45load in ('MIGPK.cargaProductos' ,'MIGPK.cargaPresentaciones') order by est45date desc</li>
+				<li>En el esquema SAVAC - JOBS hay dos que se ejecutan en horas distintas.</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Espirales ROWA</h3>
+				<li>select * from int9100</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Evitar pérdida de conexión GODEX</h3>
+				<li>^XSET,NETSOCKETIDLETIME,300</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Excipientes</h3>
+				<li>select * from frs400</li>
+				<li>select * from frs501j</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Tipos de mensajes KARDEX</h3>
+				<li>AC: Unidosis</li>
+				<li>PBP: Petición paciente</li>
+				<li>PBS: Petición a servicio</li>
+				<li>PBU: Petición urgente</li>
+				<li>PY: Reposición de PYXIS</li>
+				<li>CC: Reposición de doble cajón</li>
+				<li>MA: Movimiento manual</li>
+				<li>RE: Reposición de KARDEX</li>
+				<li>DC: Devolución de carro</li>
+				<li>CA: Cargo/Abono</li>
+				<li>IN: Inventario</li>
+				<li>DA: Dispensación ambulante</li>
+				<li>DD: Devolución ambulante</li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Al acceder a la PM se queda pensando</h3>
+				<ol>
+					<li>Para comprobar el usuario aparezca en la adm32, en la adm32 hay que revisar que los usuarios sean médicos.</li>
+					<li>select * from adm3200 a where adm11codproc_asist in (7193997)</li>
+					<li>select * from org0100 where org01id in (2129, 96)</li>
+					<li>org02codextcat corresponde con ad31codpuesto</li>
+					<li>select * from org0200d</li>
+				</ol>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<li></li>
+		</div>
+	</ul>
+	
+	<div data-role="footer" data-position="fixed"><h4>Actualización Octubre 2022</h4></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
