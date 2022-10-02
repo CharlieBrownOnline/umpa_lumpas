@@ -1,2 +1,2 @@
 # canela
-CANELA
+Canela 1.1
