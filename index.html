@@ -1,24 +1,26 @@
 <!DOCTYPE html> 
 <html>
 <head>
-	<title>Canela 1.0</title>
+	<title>CAJA DE PANDORA 1.0</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	
-	<script>
+<!--<script>
 document.addEventListener('contextmenu',function(e){e.preventDefault();e.stopPropagation();});
 document.addEventListener('copy',function(e){e.preventDefault();e.stopPropagation();});
 document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation();});
-</script>
+</script>-->
 
 </head>
 
 <body>
 
-	<div data-role="header" data-position="fixed"><h4>Canela 1.0</h4></div>
+	<!--<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">-->
+
+	<div data-role="header" data-position="fixed"><h4>CAJA DE PANDORA 1.0</h4></div>
 
 	<ul data-role="listview" data-filter="true" data-filter-placeholder="Busca y encontrarás..." data-inset="true">	
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -125,6 +127,361 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Fabricaciones kits</h3>
+				<ul>
+					<li>\\127.0.0.1 es impresora en local con el nombre ZEBRAFARMA1 que tiene que estar compartida.</li>
+					<li>Se debe copiar la carpeta ETIQUETA en la raíz de la instalación de SAVAC.</li>
+					<li>En la sg2500 pone como debe llamarse la impresora de etiquetas, en este caso, ZEBRAFARMA1</li>
+					<li>select * from sg2500 where CODPARAM='ETIQ' or CODPARAM='IMPETIQFM' or CODPARAM='IMPETIQFC'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Forma farmacéutica</h3>
+				<ul>
+					<li>select * from frh700</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Restricciones</h3>
+				<ul>
+					<li>Asociar en mira el CODEXT de maestras de V3:</u> select rowid, a.* from fch2900 a where fch29idrestric=525</li>
+					<li>Descripción restricción MIRA:</u> select rowid, a.* from fch2900d a where fch29idrestric=525</li>
+					<li>Buscar restricción en MIRA:</u> select * from fch2900d where fch29desrestric like '%cumple:%'</li>
+					<li>Asociar restricción a un producto en MIRA:</u> select * from fch6300 where fch29idrestric=525</li>
+					<li>Maestra restricciones V3:</u> select rowid, a.* from fra120 a where fra12idrest=209</li>
+					<li>Asociar restricción a una marca en V3:</u> select rowid, a.* from fra900 a</li>
+					<li>Asociar restricción a una presentación en V3:</u> select rowid, a.* from fra110 a</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Movimientos NUTRIWIN</h3>
+				<ul>
+					<li>select fr80fecmovimiento,fr80fecadd from fr8000 where fr80observmov like '%NUTRI%' order by FR80FECADD desc</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>PVL/PVP</h3>
+				<ul>
+					<li>select * from frq100</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Llamada SELENE</h3>
+				<ul>
+					<li>http://10.181.27.228/mira/?NONAV=TRUE&CORRESP=1&TIMESTAMP=20200615140000&SEGFUNPROC=164&PATIENTID=563566&PROCESSID=5827545&ASSISTANCEID=16639838</li>
+					<li>patientid=nhc</li>
+					<li>processid=proceso</li>
+					<li>assistanceid=asistencia</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Limpiar caché</h3>
+				<ul>
+					<li>select * from seg2500 where refcache=0</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Laboratorios/Proveedor</h3>
+				<ul>
+					<li>select  rowid, a.fr79codproveedor_a,fr79codproveedor_b,fr79codproveedor_c from fr7300 a where fr73codnac='505171'</li>
+					<li>select * from fr7900 where fr79proveedor like 'abbott laboratories%'</li>
+					<li>select * from fch1100 where fch11provname  like 'abbott laboratories%'</li>
+					<li>Guru ha creado lo siguiente para los provedores que  no pasan de bdcm web a v3: he creado un pl que está en savac, lo he dejado tanto en caravaca como en el reina. se llama inserta_fr7900 y se encarga de insertar en v3 los laboratorios que han llegado a mira pero no tienen código externo que les permita relacionarlos con v3.</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Relación carro KARDEX</h3>
+				<ul>
+					<li>Relación carro/departamento: select * from intgr.fr0700 where fr07descarro like 'hg-hdmq%'</li>
+					<li>Código del carro y kardex al que va: select rowid, a.* from intgr.ar_carro a where fr07codcarro=46</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Teléfono oficina</h3>
+				<ul>
+					<li>General: 968 92 84 70</li>
+					<li>Sole: 662 637 442</li>
+					<li>JL: 662 637 454</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Servidor no responde</h3>
+				<ul>
+					<li>Si a la hora de firmar/validar sale el aviso de servidor no ha respondido puede ser que las rutas de la generación del pdf no este bien definida. Para solucionar el error de manera temporal, eliminar la org200_directory</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Instalación pasiva SAVAC</h3>
+				<ul>
+					<li>Desinstalar: msiexec.exe /x "nombre_instalador.msi" /qn ó msiexec.exe /x {DAD46004-36C7-4575-82AB-F9DC5DF654AC} /qn</li>
+					<li>Instalar: msiexec.exe /i "nombre_instalador.msi" /qn</li>
+					<li>El GUID se obtiene en CMD:</u> wmic product where name="SAVAC Integración"</li>
+					<li>Desinstalar: wmic product get name product where name="SAVAC Integración" call uninstall</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Regularizable</h3>
+				<ul>
+					<li>select rowid, a.FRP10INDREGULARIZA from frp1000 a where FRP10IDPRESENTACION='3128'</li>
+					<li>select rowid, a.FR73INDREGULARIZA from fr7300 a where FR73CODPRODUCTO='5488</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Dispensaciones lote</h3>
+				<ul>
+					<li>select * from fru400</li>
+					<li>select * from fru700 where FR73CODPRODUCTO='29326'</li>
+					<li>select * from fr4900 where FR49DESLOTE='4N78C'</li>
+					<li>select * from fr6600</li>
+					<li>select * from fr7300 where FR73CODINTFAR='P-348221'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Cestas desde admin</h3>
+				<ul>
+					<li>select * from seg2500 where seg25codparam='bsqnopay'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Dispensaciones</h3>
+				<ul>
+					<li>select * from fru400</li>
+					<li>select * from fru700</li>
+					<li>select * from fr6600</li>
+					<li>select * from pet6000</li>
+					<li>Fecha próxima dispensación: select * from frx0200 order by frx02fecproxdisp desc</i></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Cabecera petición MIRA (cesta)</h3>
+				<ul>
+					<li>select * from fr6600  where ci21codpersona='15562' and fr66codpeticion='1370589'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Centros por usuario</h3>
+				<ul>
+					<li>select * from seg4000 where seg02id=1296</li>
+				</ul>
+		</div>
+				<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Campos en modo lectura en V3</h3>
+				<ul>
+					<li>Lectura genéricos: select * from fr1.frg200_frp001</li>
+					<li>Lectura presentaciones: select * from fr1.frg200_frp001</li>
+					<li>Lectura marcas: select * from fr1.frg200_frp001</li>
+					<li>Maestra: select * from frg200</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Cambiar estado PM en MIRA</h3>
+				<ul>
+					<li>select rowid, a.* from pet0000 a where pac01idpatient_int = 988165 order by pet00datadd desc</li>
+					<li>select * from pac0100 where pac01mrn = 5583862</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Buscar tablas</h3>
+				<ul>
+					<li>select * from all_tab_comments where upper(comments) like '%fra9codrest%'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Buscar petición urgente por NHC</h3>
+				<ul>
+					<li>select * from gc3600 a, gc3700 b, fr6600 c, ci2200 d where gc36codproceso = 'petprn' and a.gc36idproceso=b.gc36idproceso and fr66codpeticion=gc37pk1 and c.ci21codpersona=d.ci21codpersona and ci22numhistoria=98924</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Bloqueo PM SAVAC</h3>
+				<ul>
+					<li>Eliminamos todos los registros: select * from frl800</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Bloquear usuario SAVAC/MIRA</h3>
+				<ul>
+					<li>select rowid, a.seg02datlockpssw from seg0200 a where seg02login='amc27a'</li>
+					<li>select rowid, a.sg02fecbpassw from sg0200 a where lower(sg02cod)='amc27a'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Asistencias</h3>
+				<ul>
+					<li>Departamento: select ad02coddpto, ad02desdpto from ad0200 where ad02desdpto like '%neu%'</li>
+					<li>Departamento/NHC: select * from ad0500 a where a.ad02coddpto=11 and a.ad01codasistenci in (select b.ad01codasistenci from ad0100 b where b.ci22numhistoria=15243)</li>
+					<li>Buscar proceso para ver departamento: select * from ad0400 where ad07codproceso='12312009'</li>
+					<li>Cambiar departamento a través del proceso: update ad0400 set ad02coddpto='18' where ad07codproceso='11180229' and ad02coddpto='9'</li>
+					<li>Asistencias por NHC: select * from ad0500 where ad01codasistenci in (select b.ad01codasistenci from ad0100 b where b.ci22numhistoria='175155')</li>
+					<li>UPDATE AD0500 para cambiar departamento por otro: update ad0500 set ad02coddpto='18' where ad01codasistenci in (20755165) and ad02coddpto='9'</li>
+					<li>Departamentos usuario: select * from ad0300 where sg02cod='jho22k'</li>
+					<li>UPDATE departamentos usuario: update ad0300 set ad02coddpto='10' where sg02cod='jho22k' and ad02coddpto='15'</li>
+					<li>AD0100: select * from ad0100 a where ad01codasistenci in (2098862530)</li>
+					<li>UPDATE AD0100 para abrir asistencia con fecha fin a null: update ad0100 set ad01fecfin='' where ad01codasistenci in (23418965)</li>
+					<li>AD0500: select * from ad0500 a where ad01codasistenci in (2098792224, 2098894708, 2098897884)</li>
+					<li>UPDATE AD0500 para abrir asistencia con fecha fin a null: update ad0500 set ad05fecfinrespon='' where ad01codasistenci in (23418965)</li>
+					<li>AD0800: select * from ad0800 a where ad01codasistenci in (2098792224)</li>
+					<li>UPDATE AD0800 para abrir asistencia con fecha fin a null: update ad0800 set ad08fecfin='' where ad01codasistenci in (23418965)</li>
+					<li>AD2500: select * from ad2500 a where ad01codasistenci in (22765007)</li>
+					<li>UPDATE AD2500 para abrir asistencia con fecha fin a null: update ad0800 set ad25fecfin='' where ad01codasistenci in (23700591)</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Altas usuarios</h3>
+				<ul>
+					<li>select rowid, a.* from seg0200  a where lower(seg02login)='elr55d'</li>
+					<li>select rowid, a.* from scr1100 a where seg02id='3455'</li>
+					<li>select * from scr1200 where seg02id='3455'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Saldo libros estupefacientes</h3>
+				<ul>
+					<li>select fr13codlibroestupef, fr13fecpeticion, fr13entrada, fr13salida, fr13saldos, ad02coddpto, fr73codproducto, sg02cod_add, fr79codproveedor, frw40codalmacens,fr13fecadd from fr1300 where fr73codproducto in (7988) and frw40codalmacens=64</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Servicios sin guía</h3>
+				<ul>
+					<li>select a.*,c.*,b.*,d.* from ad0200 a,org2000 b,org2000d c,fch4300 d where ad32codtipodpto=1 and ad02coddpto=org20idextservice and b.org20idservice=c org20idservice and ad02fecfin is null and b.org20idservice=d.org20idservice(+) and fch24idguide is null</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Solapamientos</h3>
+				<ul>
+					<li>Hay que la fecha/hora de inicio/fin no coincida con la fecha/hora del siguiente.</li>
+					<li>select * from ci2200 where ci22numhistoria='45818'</li>
+					<li>select rowid, a.* from ad0100 a where ci21codpersona='70536' order by ad01fecinicio desc</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Unidades por defecto pactos</h3>
+				<ul>
+					<li>select * from seg2500 where seg25codparam='swtunitreq'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Gestión de usuarios</h3>
+				<ul>
+					<li>select rowid, a.* from seg0200 a where lower(seg02login)='fgr25d'</li>
+					<li>select * from seg0100d</li>
+					<li>select rowid, a. * from sg0200 a where lower(sg02cod)='fgr25d'</li>
+					<li>select * from sg0100</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Pacientes ingresados</h3>
+				<ul>
+					<li>NÚMERO DE CAMAS ACTIVAS:</u> select count(1) from ad1500 where ad15fecfin is null</li>
+					<li>NÚMERO DE PACIENTES INGRESADOS:</u> select count(1) from ad1500 where ad01codasistenci is not null and ad15fecfin is null</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Parametrización llamadas externas</h3>
+				<ul>
+					<li>select * from ing9100</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Versión V3 en BBDD</h3>
+				<ul>
+					<li>select * from esinstall</li>
+					<li>select * from esupdate order by FECHA_ALTA desc</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Combo departamentos protocolos</h3>
+				<ul>
+					<li>select * from ad0200 where ad02indresponproc=-1</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Bloquear externos en MIRA</h3>
+				<ul>
+					<li>select * from seg2500 where SEG25CODPARAM='MPROAMB'</li>
+					<li>Vacío: todos los ámbito lectura/escritura</li>
+					<li>Según código de asistencia ADM2700D, se pueden poder varios separados por comas: SEG25DEFVALUE</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Aporta volumen</h3>
+				<ul>
+					<li>select * from fch5900</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Instrucciones de administración</h3>
+				<ul>
+					<li>select * from pet4200</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Indicaciones & Observaciones</h3>
+				<ul>
+					<li>select * from fch6600</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Horas detalle paciente</h3>
+				<ul>
+					<li>select rowid, a.SEG25CODPARAM,a.SEG26CODTYPE,a.SEG25DEFVALUE,a.SEG25USERVALUE from seg2500 a where SEG25CODPARAM='HHBACKADM' or SEG25CODPARAM='HHFORWADM' or SEG25CODPARAM='HHBACKMB'or SEG25CODPARAM='HHFORWMB'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Protocolos y sus guías</h3>
+				<ul>
+					<li>select distinct c.fch24desguide,a.pet10desprotocol,a.pet10idprotocol from pet1000j a,pet2300 b,fch2400dj c where pet10active=1 and a.fch24idguide is null and a.pet10idprotocol=b.pet10idprotocol and b.fch24idguide=c.fch24idguide(+)</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>Prefijo para informes RPT</h3>
+				<ul>
+					<li>Se configura para que primero coja el prefijo que le indicas en: select * from sg2500 where CODPARAM='PREFINFCEN'</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>No FARMA</h3>
+				<ul>
+					<li>select FR00DESGRPTERAP, fr73codintfar, fr73desproducto from fr7300, fr0000 where fr73codintfar like 'Y%' and fr73fecfinvig is null and fr7300.FR00CODGRPTERAP=fr0000.FR00CODGRPTERAP order by 1,3</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3></h3>
 				<ul>
 					<li></li>
@@ -134,7 +491,7 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 
 	</ul>
 	
-	<div data-role="footer" data-position="fixed"><h4>Actualización Octubre 2022</h4></div>
+	<div data-role="footer" data-position="fixed"><h4>ACTUALIZACIÓN OCTUBRE 2022</h4></div>
 
 </body>
 </html>
