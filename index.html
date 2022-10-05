@@ -26,63 +26,63 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DOCTOR PETICIONES SERVICIO</h3>
 				<ul>
-					<li>select * from seg2500 where SEG25CODPARAM='SIGNDR_SRQ'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM='SIGNDR_SRQ'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DOSIFICACIONES CON FIJAR VOLUMEN</h3>
 				<ul>
-					<li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61swtcteconc = 0</li>
+					<li>SELECT B.FCH50CODINT, B.FCH50DESPRODUCT, A.FCH61DOSE FROM FCH.FCH6100 A, FCH5000 B WHERE A.FCH50IDPRODUCT=B.FCH50IDPRODUCT AND A.EST01CODCENTER IN(3) AND A.FCH61SWTCTECONC = 0</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DOSIFICACIONES VACÍAS</h3>
 				<ul>
-					<li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61dose is null</li>
+					<li>SELECT B.FCH50CODINT, B.FCH50DESPRODUCT, A.FCH61DOSE FROM FCH.FCH6100 A, FCH5000 B WHERE A.FCH50IDPRODUCT=B.FCH50IDPRODUCT AND A.EST01CODCENTER IN(3) AND A.FCH61DOSE IS NULL</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DOSIS EN LA ADMINISTRACIÓN</h3>
 				<ul>
-					<li>select * from seg2500 where SEG25CODPARAM like 'MPNODOSIS%'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM LIKE 'MPNODOSIS%'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DOSIS USUALES</h3>
 				<ul>
-					<li>select * from fch6100</li>
+					<li>SELECT * FROM FCH6100</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ELIMINAR TO-DO</h3>
 				<ul>
-					<li>Borrar la SCR1000, que es la tabla donde se guardar la configuración de la pantalla de To-Do por cada usuario.</li>
+					<li>BORRAR LA SCR1000, QUE ES LA TABLA DONDE SE GUARDAR LA CONFIGURACIÓN DE LA PANTALLA DE TO-DO POR CADA USUARIO.</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ENVIAR ZPL POR CMD</h3>
 				<ul>
-					<li>copy C:\Users\jluis\Desktop\lbl4266.prn \\SAVAC\HOS1</li>
+					<li>COPY C:\USERS\JLUIS\DESKTOP\LBL4266.PRN \\SAVAC\HOS1</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ERROR EN PRESENCIA DEL PRODUCTO</h3>
 				<ul>
-					<li>create or replace synonym savac.pet1002j for pet.pet1002j</li>
-					<li>create or replace synonym savac.pet1003j for pet.pet1003j</li>
+					<li>CREATE OR REPLACE SYNONYM SAVAC.PET1002J FOR PET.PET1002J</li>
+					<li>CREATE OR REPLACE SYNONYM SAVAC.PET1003J FOR PET.PET1003J</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ERRORES INCREMENTAL</h3>
 				<ul>
-					<li>select * from EST.EST4500 where est45load in ('MIGPK.cargaProductos' ,'MIGPK.cargaPresentaciones') order by est45date desc</li>
+					<li>SELECT * FROM EST.EST4500 WHERE EST45LOAD IN ('MIGPK.CARGAPRODUCTOS' ,'MIGPK.CARGAPRESENTACIONES') ORDER BY EST45DATE DESC</li>
 					<li>EN EL ESQUEMA SAVAC - JOBS HAY DOS QUE SE EJECUTAN EN HORAS DISTINTAS.</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ESPIRALES ROWA</h3>
 				<ul>
-					<li>select * from int9100</li>
+					<li>SELECT * FROM INT9100</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -94,196 +94,196 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>EXCIPIENTES</h3>
 				<ul>
-					<li>select * from frs400</li>
-					<li>select * from frs501j</li>
+					<li>SELECT * FROM FRS400</li>
+					<li>SELECT * FROM FRS501J</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>TIPOS DE MENSAJES KARDEX</h3>
 				<ul>
-					<li>AC: Unidosis</li>
-					<li>PBP: Petición paciente</li>
-					<li>PBS: Petición a servicio</li>
-					<li>PBU: Petición urgente</li>
-					<li>PY: Reposición de PYXIS</li>
-					<li>CC: Reposición de doble cajón</li>
-					<li>MA: Movimiento manual</li>
-					<li>RE: Reposición de KARDEX</li>
-					<li>DC: Devolución de carro</li>
-					<li>CA: Cargo/Abono</li>
-					<li>IN: Inventario</li>
-					<li>DA: Dispensación ambulante</li>
-					<li>DD: Devolución ambulante</li>
+					<li>AC: UNIDOSIS</li>
+					<li>PBP: PETICIÓN PACIENTE</li>
+					<li>PBS: PETICIÓN A SERVICIO</li>
+					<li>PBU: PETICIÓN URGENTE</li>
+					<li>PY: REPOSICIÓN DE PYXIS</li>
+					<li>CC: REPOSICIÓN DE DOBLE CAJÓN</li>
+					<li>MA: MOVIMIENTO MANUAL</li>
+					<li>RE: REPOSICIÓN DE KARDEX</li>
+					<li>DC: DEVOLUCIÓN DE CARRO</li>
+					<li>CA: CARGO/ABONO</li>
+					<li>IN: INVENTARIO</li>
+					<li>DA: DISPENSACIÓN AMBULANTE</li>
+					<li>DD: DEVOLUCIÓN AMBULANTE</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>AL ACCEDER A LA PM SE QUEDA PENSANDO</h3>
 				<ul>
-					<li>Para comprobar el usuario aparezca en la adm32, en la adm32 hay que revisar que los usuarios sean médicos.</li>
-					<li>select * from adm3200 a where adm11codproc_asist in (7193997)</li>
-					<li>select * from org0100 where org01id in (2129, 96)</li>
-					<li>org02codextcat corresponde con ad31codpuesto</li>
-					<li>select * from org0200d</li>
+					<li>PARA COMPROBAR EL USUARIO APAREZCA EN LA ADM32, EN LA ADM32 HAY QUE REVISAR QUE LOS USUARIOS SEAN MÉDICOS.</li>
+					<li>SELECT * FROM ADM3200 A WHERE ADM11CODPROC_ASIST IN (7193997)</li>
+					<li>SELECT * FROM ORG0100 WHERE ORG01ID IN (2129, 96)</li>
+					<li>ORG02CODEXTCAT CORRESPONDE CON AD31CODPUESTO</li>
+					<li>SELECT * FROM ORG0200D</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>FABRICACIONES KITS</h3>
 				<ul>
-					<li>\\127.0.0.1 es impresora en local con el nombre ZEBRAFARMA1 que tiene que estar compartida.</li>
-					<li>Se debe copiar la carpeta ETIQUETA en la raíz de la instalación de SAVAC.</li>
-					<li>En la sg2500 pone como debe llamarse la impresora de etiquetas, en este caso, ZEBRAFARMA1</li>
-					<li>select * from sg2500 where CODPARAM='ETIQ' or CODPARAM='IMPETIQFM' or CODPARAM='IMPETIQFC'</li>
+					<li>\\127.0.0.1 ES IMPRESORA EN LOCAL CON EL NOMBRE ZEBRAFARMA1 QUE TIENE QUE ESTAR COMPARTIDA.</li>
+					<li>SE DEBE COPIAR LA CARPETA ETIQUETA EN LA RAÍZ DE LA INSTALACIÓN DE SAVAC.</li>
+					<li>EN LA SG2500 PONE COMO DEBE LLAMARSE LA IMPRESORA DE ETIQUETAS, EN ESTE CASO, ZEBRAFARMA1</li>
+					<li>SELECT * FROM SG2500 WHERE CODPARAM='ETIQ' OR CODPARAM='IMPETIQFM' OR CODPARAM='IMPETIQFC'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>FORMA FARMACÉUTICA</h3>
 				<ul>
-					<li>select * from frh700</li>
+					<li>SELECT * FROM FRH700</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>RESTRICCIONES</h3>
 				<ul>
-					<li>Asociar en mira el CODEXT de maestras de V3:</u> select rowid, a.* from fch2900 a where fch29idrestric=525</li>
-					<li>Descripción restricción MIRA:</u> select rowid, a.* from fch2900d a where fch29idrestric=525</li>
-					<li>Buscar restricción en MIRA:</u> select * from fch2900d where fch29desrestric like '%cumple:%'</li>
-					<li>Asociar restricción a un producto en MIRA:</u> select * from fch6300 where fch29idrestric=525</li>
-					<li>Maestra restricciones V3:</u> select rowid, a.* from fra120 a where fra12idrest=209</li>
-					<li>Asociar restricción a una marca en V3:</u> select rowid, a.* from fra900 a</li>
-					<li>Asociar restricción a una presentación en V3:</u> select rowid, a.* from fra110 a</li>
+					<li>ASOCIAR EN MIRA EL CODEXT DE MAESTRAS DE V3:</U> SELECT ROWID, A.* FROM FCH2900 A WHERE FCH29IDRESTRIC=525</li>
+					<li>DESCRIPCIÓN RESTRICCIÓN MIRA:</U> SELECT ROWID, A.* FROM FCH2900D A WHERE FCH29IDRESTRIC=525</li>
+					<li>BUSCAR RESTRICCIÓN EN MIRA:</U> SELECT * FROM FCH2900D WHERE FCH29DESRESTRIC LIKE '%CUMPLE:%'</li>
+					<li>ASOCIAR RESTRICCIÓN A UN PRODUCTO EN MIRA:</U> SELECT * FROM FCH6300 WHERE FCH29IDRESTRIC=525</li>
+					<li>MAESTRA RESTRICCIONES V3:</U> SELECT ROWID, A.* FROM FRA120 A WHERE FRA12IDREST=209</li>
+					<li>ASOCIAR RESTRICCIÓN A UNA MARCA EN V3:</U> SELECT ROWID, A.* FROM FRA900 A</li>
+					<li>ASOCIAR RESTRICCIÓN A UNA PRESENTACIÓN EN V3:</U> SELECT ROWID, A.* FROM FRA110 A</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MOVIMIENTOS NUTRIWIN</h3>
 				<ul>
-					<li>select fr80fecmovimiento,fr80fecadd from fr8000 where fr80observmov like '%NUTRI%' order by FR80FECADD desc</li>
+					<li>SELECT FR80FECMOVIMIENTO,FR80FECADD FROM FR8000 WHERE FR80OBSERVMOV LIKE '%NUTRI%' ORDER BY FR80FECADD DESC</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PVL/PVP</h3>
 				<ul>
-					<li>select * from frq100</li>
+					<li>SELECT * FROM FRQ100</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>LLAMADA SELENE</h3>
 				<ul>
-					<li>http://10.181.27.228/mira/?NONAV=TRUE&CORRESP=1&TIMESTAMP=20200615140000&SEGFUNPROC=164&PATIENTID=563566&PROCESSID=5827545&ASSISTANCEID=16639838</li>
-					<li>patientid=nhc</li>
-					<li>processid=proceso</li>
-					<li>assistanceid=asistencia</li>
+					<li>HTTP://10.181.27.228/MIRA/?NONAV=TRUE&CORRESP=1&TIMESTAMP=20200615140000&SEGFUNPROC=164&PATIENTID=563566&PROCESSID=5827545&ASSISTANCEID=16639838</li>
+					<li>PATIENTID=NHC</li>
+					<li>PROCESSID=PROCESO</li>
+					<li>ASSISTANCEID=ASISTENCIA</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>LIMPIAR CACHÉ</h3>
 				<ul>
-					<li>select * from seg2500 where refcache=0</li>
+					<li>SELECT * FROM SEG2500 WHERE REFCACHE=0</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>LABORATORIOS/PROVEEDOR</h3>
 				<ul>
-					<li>select  rowid, a.fr79codproveedor_a,fr79codproveedor_b,fr79codproveedor_c from fr7300 a where fr73codnac='505171'</li>
-					<li>select * from fr7900 where fr79proveedor like 'abbott laboratories%'</li>
-					<li>select * from fch1100 where fch11provname  like 'abbott laboratories%'</li>
-					<li>Guru ha creado lo siguiente para los provedores que  no pasan de bdcm web a v3: he creado un pl que está en savac, lo he dejado tanto en caravaca como en el reina. se llama inserta_fr7900 y se encarga de insertar en v3 los laboratorios que han llegado a mira pero no tienen código externo que les permita relacionarlos con v3.</li>
+					<li>SELECT  ROWID, A.FR79CODPROVEEDOR_A,FR79CODPROVEEDOR_B,FR79CODPROVEEDOR_C FROM FR7300 A WHERE FR73CODNAC='505171'</li>
+					<li>SELECT * FROM FR7900 WHERE FR79PROVEEDOR LIKE 'ABBOTT LABORATORIES%'</li>
+					<li>SELECT * FROM FCH1100 WHERE FCH11PROVNAME  LIKE 'ABBOTT LABORATORIES%'</li>
+					<li>GURU HA CREADO LO SIGUIENTE PARA LOS PROVEDORES QUE  NO PASAN DE BDCM WEB A V3: HE CREADO UN PL QUE ESTÁ EN SAVAC, LO HE DEJADO TANTO EN CARAVACA COMO EN EL REINA. SE LLAMA INSERTA_FR7900 Y SE ENCARGA DE INSERTAR EN V3 LOS LABORATORIOS QUE HAN LLEGADO A MIRA PERO NO TIENEN CÓDIGO EXTERNO QUE LES PERMITA RELACIONARLOS CON V3.</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>RELACIÓN CARRO KARDEX</h3>
 				<ul>
-					<li>Relación carro/departamento: select * from intgr.fr0700 where fr07descarro like 'hg-hdmq%'</li>
-					<li>Código del carro y kardex al que va: select rowid, a.* from intgr.ar_carro a where fr07codcarro=46</li>
+					<li>RELACIÓN CARRO/DEPARTAMENTO: SELECT * FROM INTGR.FR0700 WHERE FR07DESCARRO LIKE 'HG-HDMQ%'</li>
+					<li>CÓDIGO DEL CARRO Y KARDEX AL QUE VA: SELECT ROWID, A.* FROM INTGR.AR_CARRO A WHERE FR07CODCARRO=46</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>TELÉFONO OFICINA</h3>
 				<ul>
-					<li>General: 968 92 84 70</li>
-					<li>Sole: 662 637 442</li>
+					<li>GENERAL: 968 92 84 70</li>
+					<li>SOLE: 662 637 442</li>
 					<li>JL: 662 637 454</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>SERVIDOR NO RESPONDE</h3>
 				<ul>
-					<li>Si a la hora de firmar/validar sale el aviso de servidor no ha respondido puede ser que las rutas de la generación del pdf no este bien definida. Para solucionar el error de manera temporal, eliminar la org200_directory</li>
+					<li>SI A LA HORA DE FIRMAR/VALIDAR SALE EL AVISO DE SERVIDOR NO HA RESPONDIDO PUEDE SER QUE LAS RUTAS DE LA GENERACIÓN DEL PDF NO ESTE BIEN DEFINIDA. PARA SOLUCIONAR EL ERROR DE MANERA TEMPORAL, ELIMINAR LA ORG200_DIRECTORY</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>INSTALACIÓN PASIVA SAVAC</h3>
 				<ul>
-					<li>Desinstalar: msiexec.exe /x "nombre_instalador.msi" /qn ó msiexec.exe /x {DAD46004-36C7-4575-82AB-F9DC5DF654AC} /qn</li>
-					<li>Instalar: msiexec.exe /i "nombre_instalador.msi" /qn</li>
-					<li>El GUID se obtiene en CMD:</u> wmic product where name="SAVAC Integración"</li>
-					<li>Desinstalar: wmic product get name product where name="SAVAC Integración" call uninstall</li>
+					<li>DESINSTALAR: MSIEXEC.EXE /X "NOMBRE_INSTALADOR.MSI" /QN Ó MSIEXEC.EXE /X {DAD46004-36C7-4575-82AB-F9DC5DF654AC} /QN</li>
+					<li>INSTALAR: MSIEXEC.EXE /I "NOMBRE_INSTALADOR.MSI" /QN</li>
+					<li>EL GUID SE OBTIENE EN CMD: WMIC PRODUCT WHERE NAME="SAVAC INTEGRACIÓN"</li>
+					<li>DESINSTALAR: WMIC PRODUCT GET NAME PRODUCT WHERE NAME="SAVAC INTEGRACIÓN" CALL UNINSTALL</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>REGULARIZABLE</h3>
 				<ul>
-					<li>select rowid, a.FRP10INDREGULARIZA from frp1000 a where FRP10IDPRESENTACION='3128'</li>
-					<li>select rowid, a.FR73INDREGULARIZA from fr7300 a where FR73CODPRODUCTO='5488</li>
+					<li>SELECT ROWID, A.FRP10INDREGULARIZA FROM FRP1000 A WHERE FRP10IDPRESENTACION='3128'</li>
+					<li>SELECT ROWID, A.FR73INDREGULARIZA FROM FR7300 A WHERE FR73CODPRODUCTO='5488'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DISPENSACIONES LOTE</h3>
 				<ul>
-					<li>select * from fru400</li>
-					<li>select * from fru700 where FR73CODPRODUCTO='29326'</li>
-					<li>select * from fr4900 where FR49DESLOTE='4N78C'</li>
-					<li>select * from fr6600</li>
-					<li>select * from fr7300 where FR73CODINTFAR='P-348221'</li>
+					<li>SELECT * FROM FRU400</li>
+					<li>SELECT * FROM FRU700 WHERE FR73CODPRODUCTO='29326'</li>
+					<li>SELECT * FROM FR4900 WHERE FR49DESLOTE='4N78C'</li>
+					<li>SELECT * FROM FR6600</li>
+					<li>SELECT * FROM FR7300 WHERE FR73CODINTFAR='P-348221'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>CESTAS DESDE ADMIN</h3>
 				<ul>
-					<li>select * from seg2500 where seg25codparam='bsqnopay'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM='BSQNOPAY'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DISPENSACIONES</h3>
 				<ul>
-					<li>select * from fru400</li>
-					<li>select * from fru700</li>
-					<li>select * from fr6600</li>
-					<li>select * from pet6000</li>
-					<li>Fecha próxima dispensación: select * from frx0200 order by frx02fecproxdisp desc</i></li>
+					<li>SELECT * FROM FRU400</li>
+					<li>SELECT * FROM FRU700</li>
+					<li>SELECT * FROM FR6600</li>
+					<li>SELECT * FROM PET6000</li>
+					<li>FECHA PRÓXIMA DISPENSACIÓN: SELECT * FROM FRX0200 ORDER BY FRX02FECPROXDISP DESC</i></li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>CABECERA PETICIÓN MIRA (CESTA)</h3>
 				<ul>
-					<li>select * from fr6600  where ci21codpersona='15562' and fr66codpeticion='1370589'</li>
+					<li>SELECT * FROM FR6600  WHERE CI21CODPERSONA='15562' AND FR66CODPETICION='1370589'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>CENTROS POR USUARIO</h3>
 				<ul>
-					<li>select * from seg4000 where seg02id=1296</li>
+					<li>SELECT * FROM SEG4000 WHERE SEG02ID=1296</li>
 				</ul>
 		</div>
 				<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>CAMPOS EN MODO LECTURA EN V3</h3>
 				<ul>
-					<li>Lectura genéricos: select * from fr1.frg200_frp001</li>
-					<li>Lectura presentaciones: select * from fr1.frg200_frp001</li>
-					<li>Lectura marcas: select * from fr1.frg200_frp001</li>
-					<li>Maestra: select * from frg200</li>
+					<li>LECTURA GENÉRICOS: SELECT * FROM FR1.FRG200_FRP001</li>
+					<li>LECTURA PRESENTACIONES: SELECT * FROM FR1.FRG200_FRP001</li>
+					<li>LECTURA MARCAS: SELECT * FROM FR1.FRG200_FRP001</li>
+					<li>MAESTRA: SELECT * FROM FRG200</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>CAMBIAR ESTADO PM EN MIRA</h3>
 				<ul>
-					<li>select rowid, a.* from pet0000 a where pac01idpatient_int = 988165 order by pet00datadd desc</li>
-					<li>select * from pac0100 where pac01mrn = 5583862</li>
+					<li>SELECT ROWID, A.* FROM PET0000 A WHERE PAC01IDPATIENT_INT = 988165 ORDER BY PET00DATADD DESC</li>
+					<li>SELECT * FROM PAC0100 WHERE PAC01MRN = 5583862</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>BUSCAR TABLAS</h3>
 				<ul>
-					<li>select * from all_tab_comments where upper(comments) like '%fra9codrest%'</li>
+					<li>SELECT * FROM ALL_TAB_COMMENTS WHERE UPPER(COMMENTS) LIKE '%FRA9CODREST%'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -430,27 +430,27 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PROTOCOLOS Y SUS GUÍAS</h3>
 				<ul>
-					<li>select distinct c.fch24desguide,a.pet10desprotocol,a.pet10idprotocol from pet1000j a,pet2300 b,fch2400dj c where pet10active=1 and a.fch24idguide is null and a.pet10idprotocol=b.pet10idprotocol and b.fch24idguide=c.fch24idguide(+)</li>
+					<li>SELECT DISTINCT C.FCH24DESGUIDE,A.PET10DESPROTOCOL,A.PET10IDPROTOCOL FROM PET1000J A,PET2300 B,FCH2400DJ C WHERE PET10ACTIVE=1 AND A.FCH24IDGUIDE IS NULL AND A.PET10IDPROTOCOL=B.PET10IDPROTOCOL AND B.FCH24IDGUIDE=C.FCH24IDGUIDE(+)</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PREFIJO PARA INFORMES RPT</h3>
 				<ul>
-					<li>Se configura para que primero coja el prefijo que le indicas en: select * from sg2500 where CODPARAM='PREFINFCEN'</li>
+					<li>SE CONFIGURA PARA QUE PRIMERO COJA EL PREFIJO QUE LE INDICAS EN: SELECT * FROM SG2500 WHERE CODPARAM='PREFINFCEN'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-			<h3>No FARMA</h3>
+			<h3>NO FARMA</h3>
 				<ul>
-					<li>select FR00DESGRPTERAP, fr73codintfar, fr73desproducto from fr7300, fr0000 where fr73codintfar like 'Y%' and fr73fecfinvig is null and fr7300.FR00CODGRPTERAP=fr0000.FR00CODGRPTERAP order by 1,3</li>
+					<li>SELECT FR00DESGRPTERAP, FR73CODINTFAR, FR73DESPRODUCTO FROM FR7300, FR0000 WHERE FR73CODINTFAR LIKE 'Y%' AND FR73FECFINVIG IS NULL AND FR7300.FR00CODGRPTERAP=FR0000.FR00CODGRPTERAP ORDER BY 1,3</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>NOMBRE DOCTOR EN LOS ESTUPES</h3>
 				<ul>
-					<li>select * from seg2500 where SEG25CODPARAM='SIGNDR_SRQ'</li>
-					<li>0: solicitar tantas veces como productos.</li>
-					<li>1: solicitar solo una vez</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM='SIGNDR_SRQ'</li>
+					<li>0: SOLICITAR TANTAS VECES COMO PRODUCTOS.</li>
+					<li>1: SOLICITAR SOLO UNA VEZ</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -674,15 +674,15 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 			<h3>GRUPO CLÍNICO</h3>
 				<ul>
 					<li>ACTIVAR DOSIFICACION POR GRUPO CLINICO: SEG25.CLINIC_GR = 1</li>
-					<li>GRUPOS CLÍNICOS: select * from pac3200</li>
-					<li>DE UNA MIV: select * from fch3000d</li>
-					<li>CONFIGURAR: ingc400</li>
+					<li>GRUPOS CLÍNICOS: SELECT * FROM PAC3200</li>
+					<li>DE UNA MIV: SELECT * FROM FCH3000D</li>
+					<li>CONFIGURAR: INGC400</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MULTIGUÍA</h3>
 				<ul>
-					<li>select * from seg2500 where seg25codparam = 'swtmulgupm'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM = 'SWTMULGUPM'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -694,21 +694,21 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>FRECUENCIAS FAVORITAS COLOR AZUL</h3>
 				<ul>
-					<li>select * from fch5700</li>
+					<li>SELECT * FROM FCH5700</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>QUITAR VIGENCIA DEPARTAMENTOS</h3>
 				<ul>
-					<li>select * from ad0300 where AD03FECFIN is not null</li>
-					<li>update ad0300 set AD03FECFIN=null where AD03FECFIN is not null</li>
+					<li>SELECT * FROM AD0300 WHERE AD03FECFIN IS NOT NULL</li>
+					<li>UPDATE AD0300 SET AD03FECFIN=NULL WHERE AD03FECFIN IS NOT NULL</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>USUARIOS POR NODO</h3>
 				<ul>
-					<li>select * from seg3400</li>
-					<li>select count(*) from seg3400</li>
+					<li>SELECT * FROM SEG3400</li>
+					<li>SELECT COUNT(*) FROM SEG3400</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -730,29 +730,29 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>USUARIOS CONECTADOS A LA BD</h3>
 				<ul>
-					<li>select sid, osuser, machine, terminal from v$session where username is not null order by username asc</li>
+					<li>SELECT SID, OSUSER, MACHINE, TERMINAL FROM V$SESSION WHERE USERNAME IS NOT NULL ORDER BY USERNAME ASC</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>UPDATEAR MENSAJERÍA</h3>
 				<ul>
-					<li>Cuando no quiere que se genere mensajeria hacia MIRA se tiene que desabilitar el trigger que empieza por INTEC_nombre de la tabla que vas a updatear.</li>
+					<li>CUANDO NO QUIERE QUE SE GENERE MENSAJERIA HACIA MIRA SE TIENE QUE DESABILITAR EL TRIGGER QUE EMPIEZA POR INTEC_NOMBRE DE LA TABLA QUE VAS A UPDATEAR.</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>UBICAR PRODUCTO EN ALMACÉN</h3>
 				<ul>
-					<li>Faltaba asociarlo al genérico para poder darlo de alta en en los almacenes, se ha creado una incidencia a desarrollo para que lo haga de forma automática.</li>
-					<li>⇒ Pero al recepcionar pedido tienen problemas al no poder ubicarlo en el almacén.</li>
-					<li>Asociar el genérico a mano en v3.</li>
-					<li>La relacion marca/almacen principal no está en la frw6000, es la propia fr7300, tiene que tener el fr73indalmacen=-1 y no tener fecfinvigalm</li>
-					<li>select fr73indalmacen, FR73FECFINVIG_ALM, a.rowid,  a.* from fr7300  a where FR73CODNAC = 728730</li>
+					<li>FALTABA ASOCIARLO AL GENÉRICO PARA PODER DARLO DE ALTA EN EN LOS ALMACENES, SE HA CREADO UNA INCIDENCIA A DESARROLLO PARA QUE LO HAGA DE FORMA AUTOMÁTICA.</li>
+					<li>PERO AL RECEPCIONAR PEDIDO TIENEN PROBLEMAS AL NO PODER UBICARLO EN EL ALMACÉN.</LI>
+					<LI>ASOCIAR EL GENÉRICO A MANO EN V3.</li>
+					<li>LA RELACION MARCA/ALMACEN PRINCIPAL NO ESTÁ EN LA FRW6000, ES LA PROPIA FR7300, TIENE QUE TENER EL FR73INDALMACEN=-1 Y NO TENER FECFINVIGALM</li>
+					<li>SELECT FR73INDALMACEN, FR73FECFINVIG_ALM, A.ROWID,  A.* FROM FR7300  A WHERE FR73CODNAC = 728730</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>NO ENVIAR CARGOS/ABONOS AL KARDEX</h3>
 				<ul>
-					<li>select * from sg2500 where codparam='indintea'</li>
+					<li>SELECT * FROM SG2500 WHERE CODPARAM='INDINTEA'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -764,23 +764,23 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ORDEN PESTAÑAS DESDE SELENE</h3>
 				<ul>
-					<li>select * from seg0100_modorder</li>
+					<li>SELECT * FROM SEG0100_MODORDER</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>NÚMERO MAYOR DE FILAS</h3>
 				<ul>
-					<li>Borrar registros duplicados de potasio, creatinina, peso o talla.</li>
-					<li>select rowid, a.* from ad3800 a where AD01CODASISTENCI in (SELECT AD01CODASISTENCI FROM AD0100 WHERE CI22NUMHISTORIA='125703') ORDER BY 2 DESC</li>
+					<li>BORRAR REGISTROS DUPLICADOS DE POTASIO, CREATININA, PESO O TALLA.</li>
+					<li>SELECT ROWID, A.* FROM AD3800 A WHERE AD01CODASISTENCI IN (SELECT AD01CODASISTENCI FROM AD0100 WHERE CI22NUMHISTORIA='125703') ORDER BY 2 DESC</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>LOCALIDADES/MUNICIPIOS/DIRECCIONES</h3>
 				<ul>
-					<li>DIRECCIÓN: select * from ci1000 where CI21CODPERSONA='21'</li>
-					<li>select * from ci2200 where CI21CODPERSONA='21'</li>
-					<li>LOCALIDADES: select * from ci1600</li>
-					<li>MUNICIPIOS: select * from ci1700</li>
+					<li>DIRECCIÓN: SELECT * FROM CI1000 WHERE CI21CODPERSONA='21'</li>
+					<li>SELECT * FROM CI2200 WHERE CI21CODPERSONA='21'</li>
+					<li>LOCALIDADES: SELECT * FROM CI1600</li>
+					<li>MUNICIPIOS: SELECT * FROM CI1700</li>
 					<li>CI10INDDIRPRINC ---tiene que estar a -1 para dirección principal, antes no era obligatoria y ahora tiene que tener una</li>
 					<li>CURSOR PARA UPDATEAR MUCHOS REGISTROS CON COMMIT CADA 1000 REGISTROS: declare cursor c1 is select distinct ci21codpersona from ci1000;
 					conta number :=0;
@@ -797,10 +797,10 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MARCAS & JERARQUÍAS</h3>
 				<ul>
-					<li>MARCAS ASOCIADAS A PRESENTACIONES: select * from frp1300</li>
-					<li>JERARQUÍAS: select * from fch7000</li>
-					<li>MARCA PREFERENTE DISPENSACIÓN: select * from frp2300</li>
-					<li>MARCA PREFERENTE COMPRA: select * from frp2500</li>
+					<li>MARCAS ASOCIADAS A PRESENTACIONES: SELECT * FROM FRP1300</li>
+					<li>JERARQUÍAS: SELECT * FROM FCH7000</li>
+					<li>MARCA PREFERENTE DISPENSACIÓN: SELECT * FROM FRP2300</li>
+					<li>MARCA PREFERENTE COMPRA: SELECT * FROM FRP2500</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -812,24 +812,24 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MENSAJERÍA PENDIENTE</h3>
 				<ul>
-					<li>REVISAR QUE SE CREAN LOS EVENTOS: select * from int0200 where int02fecadd >sysdate -1 and int02procesado=0 order by int02fecadd desc</li>
-					<li>REVISAR QUE SE PROCESAN LOS EVENTOS: select * from int0600 where int06estado='p'  and int06fecadd > sysdate -1 order by int06fecadd desc</li>
-					<li>MENSAJERIA ENCOLADA, SI NO HAY REGISTROS ACTUALES ES QUE NO ESTÁ ENTRANDO LA MENSAJERIA: select ad01fecadd from ad0100 order by ad01fecadd desc</li>
-					<li>SI HAY MENSAJES ENCOLADOS: Reiniciar jboss</li>
+					<li>REVISAR QUE SE CREAN LOS EVENTOS: SELECT * FROM INT0200 WHERE INT02FECADD >SYSDATE -1 AND INT02PROCESADO=0 ORDER BY INT02FECADD DESC</li>
+					<li>REVISAR QUE SE PROCESAN LOS EVENTOS: SELECT * FROM INT0600 WHERE INT06ESTADO='P'  AND INT06FECADD > SYSDATE -1 ORDER BY INT06FECADD DESC</li>
+					<li>MENSAJERIA ENCOLADA, SI NO HAY REGISTROS ACTUALES ES QUE NO ESTÁ ENTRANDO LA MENSAJERIA: SELECT AD01FECADD FROM AD0100 ORDER BY AD01FECADD DESC</li>
+					<li>SI HAY MENSAJES ENCOLADOS: REINICIAR JBOSS</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MENSAJES ENVIADOS MIRA</h3>
 				<ul>
-					<li>select * from pet2500</li>
+					<li>SELECT * FROM PET2500</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MOVIMIENTOS & CONSUMOS</h3>
 				<ul>
-					<li>TIPOS DE MOVIMIENTOS: select * from fr9000</li>
-					<li>MOVIMIENTOS ALMACÉN: select * from fr8000</li>
-					<li>CONSUMOS: select * from fr6500</li>
+					<li>TIPOS DE MOVIMIENTOS: SELECT * FROM FR9000</li>
+					<li>MOVIMIENTOS ALMACÉN: SELECT * FROM FR8000</li>
+					<li>CONSUMOS: SELECT * FROM FR6500</li>
 				</ul>
 		</div>
 				<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -843,97 +843,97 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>MÉDICO PETICIONARIO</h3>
 				<ul>
-					<li>select * from fch6000 where FCH60SWTREQDOCTOR = 1</li>
+					<li>SELECT * FROM FCH6000 WHERE FCH60SWTREQDOCTOR = 1</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>NO FORMULARIO EN PROTOCOLOS</h3>
 				<ul>
-					<li>Sacar de pet1000d el PET10IDPROTOCOL</li>
-					<li>Filtrar en pet1102j por PET10IDPROTOCOL y sacar PET16IDSESSION</li>
-					<li>En la pet1200 filtar por PET16IDSESSION</li>
-					<li>Cambiar PET12DESPRODUCT por la descripción que necesitamos y ET12SWTCTECONCENTR a valor 1</li>
+					<li>SACAR DE PET1000D EL PET10IDPROTOCOL</li>
+					<li>FILTRAR EN PET1102J POR PET10IDPROTOCOL Y SACAR PET16IDSESSION</li>
+					<li>EN LA PET1200 FILTAR POR PET16IDSESSION</li>
+					<li>CAMBIAR PET12DESPRODUCT POR LA DESCRIPCIÓN QUE NECESITAMOS Y ET12SWTCTECONCENTR A VALOR 1</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>NÚMERO DE UN DETERMINADO PROTOCOLO</h3>
 				<ul>
-					<li style=text-align:center>select distinct pac01mrn,REPLACE(DESCPROTOCOL,SUBSTR(DESCPROTOCOL,-22))
-					from pet0501j a,pet0000 b,pac0100 c
-					where b.PET00IDMP=a.PET00IDMP
-					and b.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
-					and descprotocol like '%SEPSIS%'</li>
+					<li>SELECT DISTINCT PAC01MRN,REPLACE(DESCPROTOCOL,SUBSTR(DESCPROTOCOL,-22))
+					FROM PET0501J A,PET0000 B,PAC0100 C
+					WHERE B.PET00IDMP=A.PET00IDMP
+					AND B.PAC01IDPATIENT_INT=C.PAC01IDPATIENT_INT
+					AND DESCPROTOCOL LIKE '%SEPSIS%'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ORDENAR PERFIL FTP POR NHC</h3>
 				<ul>
-					<li>select rowid, a.* from sg2500 a where CODPARAM='ORDFTPNHIS'</li>
+					<li>SELECT ROWID, A.* FROM SG2500 A WHERE CODPARAM='ORDFTPNHIS'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PACIENTES INGRESADOS CON PM EN ESTADO REDACTADO</h3>
 				<ul>
-					<li>select * from org0700 a, org0600 b, adm1100 c, pac0100 d, pet0000 h where a.ORG06IDLOCATION=b.ORG06IDLOCATION and
-					a.ADM11CODPROC_ASIST=c.ADM11CODPROC_ASIST and c.PAC01IDPATIENT_INT=d.PAC01IDPATIENT_INT
-					and c.PAC01IDPATIENT_INT=h.PAC01IDPATIENT_INT and est05idvalue_sp=192</li>
+					<li>SELECT * FROM ORG0700 A, ORG0600 B, ADM1100 C, PAC0100 D, PET0000 H WHERE A.ORG06IDLOCATION=B.ORG06IDLOCATION AND
+					A.ADM11CODPROC_ASIST=C.ADM11CODPROC_ASIST AND C.PAC01IDPATIENT_INT=D.PAC01IDPATIENT_INT
+					AND C.PAC01IDPATIENT_INT=H.PAC01IDPATIENT_INT AND EST05IDVALUE_SP=192</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>DISPENSACIONES YA HECHAS DE UN PACIENTE</h3>
 				<ul>
-					<li>select a.* from FRU400 a, ad0100 b where a.AD01CODASISTENCI = b.AD01CODASISTENCI and CI22NUMHISTORIA = 93314</li>
-					<li>select * from fru700 where FRU04CODINT = 305789</li>
+					<li>SELECT A.* FROM FRU400 A, AD0100 B WHERE A.AD01CODASISTENCI = B.AD01CODASISTENCI AND CI22NUMHISTORIA = 93314</li>
+					<li>SELECT * FROM FRU700 WHERE FRU04CODINT = 305789</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PETICIONES BOTIQUINES</h3>
 				<ul>
-					<li>select count(PET60CODALBARAN), c.SEG02LOGIN, ORG01NAME, ORG01LASTNAME, ORG01LASTNAME2
-					from PET6000 a, org2000d b, seg0200  c, org0100 d
-					where EST05IDVALUE_TR=144 --Petición de Botiquín
-					and PET60DATADD>sysdate-365
-					and a.SEG02ID_ADD=seg02id
-					and ORG01ID=SEG02ID
-					and a.ORG20IDSERVICE=b.ORG20IDSERVICE
-					group by c.SEG02LOGIN, ORG01NAME, ORG01LASTNAME, ORG01LASTNAME2 --PET60CODALBARAN, ORG20DESCSERVICE, c.SEG02LOGIN
-					order by 1 desc</li>
+					<li>SELECT COUNT(PET60CODALBARAN), C.SEG02LOGIN, ORG01NAME, ORG01LASTNAME, ORG01LASTNAME2
+					FROM PET6000 A, ORG2000D B, SEG0200  C, ORG0100 D
+					WHERE EST05IDVALUE_TR=144
+					AND PET60DATADD>SYSDATE-365
+					AND A.SEG02ID_ADD=SEG02ID
+					AND ORG01ID=SEG02ID
+					AND A.ORG20IDSERVICE=B.ORG20IDSERVICE
+					GROUP BY C.SEG02LOGIN, ORG01NAME, ORG01LASTNAME, ORG01LASTNAME2 --PET60CODALBARAN, ORG20DESCSERVICE, C.SEG02LOGIN
+					ORDER BY 1 DESC</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PETICIONES BOTIQUINES DEPARTAMENTO</h3>
 				<ul>
-					<li>select AD02DESDPTO from fr5500 a, ad0200 b where a.ad02coddpto=b.ad02coddpto and fr55fecadd>TO_DATE('01/01/2021 00:00:00','DD/MM/YYYY HH24:MI:SS')</li>
-					<li>select distinct( b.SG02COD_ADD), c.SG02NOM,c.SG02APE1,c.SG02APE2,d.SG01DES FROM FR5500 b, sg0200 c, sg0100 d where b.SG02COD_ADd=c.SG02COD and d.SG01COD=c.SG01COD and b.FR55FECADD > TO_DATE('01/01/2021 09:48:04', 'MM/DD/YYYY HH24:MI:SS') and b.FR55FECADD < sysdate order by 5</li>
+					<li>SELECT AD02DESDPTO FROM FR5500 A, AD0200 B WHERE A.AD02CODDPTO=B.AD02CODDPTO AND FR55FECADD>TO_DATE('01/01/2021 00:00:00','DD/MM/YYYY HH24:MI:SS')</li>
+					<li>SELECT DISTINCT( B.SG02COD_ADD), C.SG02NOM,C.SG02APE1,C.SG02APE2,D.SG01DES FROM FR5500 B, SG0200 C, SG0100 D WHERE B.SG02COD_ADD=C.SG02COD AND D.SG01COD=C.SG01COD AND B.FR55FECADD > TO_DATE('01/01/2021 09:48:04', 'MM/DD/YYYY HH24:MI:SS') AND B.FR55FECADD < SYSDATE ORDER BY 5</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PETICIONES ENVIADAS AL KARDEX</h3>
 				<ul>
-					<li>C:\sap\entrada\KdxRecibidos</li>
-					<li>|74|OBS-B.29|O|P-346587|PLAVIX 75 MG 50 COMPRIMIDOS CUBIERTA PEL|1|21-06-22 00:39:10|GARCIA|GONZALEZ|SALVADOR||Control de Observacion B de Urgenc|908720P||0 ⇒ Si el mensaje viene a 0 es que desde el kdx han cancelado la petición de forma manual.
-					|96|SCM-04|O|122614|APIDRA 100UI/ML 1 VIAL 10ML SOLUCION INYECTABLE|1|21-06-21 20:07:11|MARTINEZ|CORONADO|DIEGO||Sala de Cuidados Medios|908684P||1 ⇒ Unidades dispensadas</li>
+					<li>C:\SAP\ENTRADA\KDXRECIBIDOS</li>
+					<li>|74|OBS-B.29|O|P-346587|PLAVIX 75 MG 50 COMPRIMIDOS CUBIERTA PEL|1|21-06-22 00:39:10|GARCIA|GONZALEZ|SALVADOR||CONTROL DE OBSERVACION B DE URGENC|908720P||0 ⇒ SI EL MENSAJE VIENE A 0 ES QUE DESDE EL KDX HAN CANCELADO LA PETICIÓN DE FORMA MANUAL.
+					|96|SCM-04|O|122614|APIDRA 100UI/ML 1 VIAL 10ML SOLUCION INYECTABLE|1|21-06-21 20:07:11|MARTINEZ|CORONADO|DIEGO||SALA DE CUIDADOS MEDIOS|908684P||1 ⇒ UNIDADES DISPENSADAS</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PIANO</h3>
 				<ul>
-					<li>MÁXIMO CAMAS A MOSTRAR: select rowid, a.* from seg2500 a where SEG25CODPARAM = 'MAXMULTLOC'</li>
-					<li>MÁXIMO NÚMERO DE UBICACIONES A MOSTRAR: select rowid, a.* from seg2500 a where SEG25CODPARAM = 'MAXMULTRES'</li>
+					<li>MÁXIMO CAMAS A MOSTRAR: SELECT ROWID, A.* FROM SEG2500 A WHERE SEG25CODPARAM = 'MAXMULTLOC'</li>
+					<li>MÁXIMO NÚMERO DE UBICACIONES A MOSTRAR: SELECT ROWID, A.* FROM SEG2500 A WHERE SEG25CODPARAM = 'MAXMULTRES'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PING A CADENA DE CONEXIÓN</h3>
 				<ul>
-					<li>TNSPING 10.181.161.77:1522 100000 > C:\LogSavac.txt</li>
-					<li>10000: veces que lo ejecuta</li>
-					<li>> : guarda log</li>
+					<li>TNSPING 10.181.161.77:1522 100000 > C:\LOGSAVAC.TXT</li>
+					<li>10000: VECES QUE LO EJECUTA</li>
+					<li>>: GUARDA LOG</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PM A FUTURO</h3>
 				<ul>
-					<li>select * from seg2500 where SEG25CODPARAM = 'FUTURNOACT'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM = 'FUTURNOACT'</li>
 					<li>ROL - AGENDA DEL PACIENTE - MANTENIMIENTO AGRUPACIONES A MOSTRAR</li>
 					<li>MANTENIMIENTO GENERALES - AGENDA DEL PACIENTE - MANTENIMIENTO AGRUPACIONES A MOSTAR - PM MODO CONSULTA - ACTUACIONES PM A FUTURO</li>
 				</ul>
@@ -941,8 +941,8 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PR EN GUÍA MC NO</h3>
 				<ul>
-					<li>select * from frp2300 a where fr73codproducto not in (select fr73codproducto from fr8300 where fr82codguia=0) and frp10idpresentacion in (select frp10idpresentacion from fr8500 where fr82codguia=0)</li>
-					<li>select * from frp1000 where FRP10IDPRESENTACION in (5077,3130,2065)</li>
+					<li>SELECT * FROM FRP2300 A WHERE FR73CODPRODUCTO NOT IN (SELECT FR73CODPRODUCTO FROM FR8300 WHERE FR82CODGUIA=0) AND FRP10IDPRESENTACION IN (SELECT FRP10IDPRESENTACION FROM FR8500 WHERE FR82CODGUIA=0)</li>
+					<li>SELECT * FROM FRP1000 WHERE FRP10IDPRESENTACION IN (5077,3130,2065)</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -956,46 +956,46 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRINCIPIO ACTIVO ATC</h3>
 				<ul>
-					<li>TABLAS: frp2100, fch0600, fr7300_od</li>
-					<li>RELACIÓN PRODUCTO/PPO: fr6400, fch5100</li>
-					<li>MAESTRO: fr6800, fch0500</li>
+					<li>TABLAS: FRP2100, FCH0600, FR7300_OD</li>
+					<li>RELACIÓN PRODUCTO/PPO: FR6400, FCH5100</li>
+					<li>MAESTRO: FR6800, FCH0500</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRODUCTOS DILUIBLES</h3>
 				<ul>
-					<li>select * from fch5000 where fch50desproduct like '%remifen%'</li>
-					<li>update fch5000 set fch50swtdilutable=1 where fch50idproduct=17129</li>
+					<li>SELECT * FROM FCH5000 WHERE FCH50DESPRODUCT LIKE '%REMIFEN%'</li>
+					<li>UPDATE FCH5000 SET FCH50SWTDILUTABLE=1 WHERE FCH50IDPRODUCT=17129</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRODUCTOS DUPLICADOS</h3>
 				<ul>
 					<li>CUANDO SALEN PRODUCTOS DUPLICADOS EN EL BUSCADOR ES PORQUE TIENE DOS MARCAS PREFERENTES PARA DISPENSACIÓN O COMPRA, SE DEBE DEJAR SOLO UNA.</li>
-					<li>select * from frp2300 where frp10idpresentacion=2213</li>
+					<li>SELECT * FROM FRP2300 WHERE FRP10IDPRESENTACION=2213</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRODUCTOS INCLUIDOS EN LA MIV</h3>
 				<ul>
-					<li>LOCALIZAS LA MIV: select * from fch5000 where fch50desproduct like 'AMPICIL%'</li>
-					<li>DOSIFICACIÓN POR GC: select * from fch6100 where fch50idproduct=23320</li>
-					<li>PRODUCTOS CONTENIDOS EN LA MIV: select * from fch7400 where FCH61IDDOSAGE in (303653,303654)</li>
+					<li>LOCALIZAS LA MIV: SELECT * FROM FCH5000 WHERE FCH50DESPRODUCT LIKE 'AMPICIL%'</li>
+					<li>DOSIFICACIÓN POR GC: SELECT * FROM FCH6100 WHERE FCH50IDPRODUCT=23320</li>
+					<li>PRODUCTOS CONTENIDOS EN LA MIV: SELECT * FROM FCH7400 WHERE FCH61IDDOSAGE IN (303653,303654)</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRODUCTOS NO LLEGAN AL PYXIS</h3>
 				<ul>
-					<li>select b.FRU7CODINTERNO, b.FR28DESPRODUCTO, c.FRU4FECADD, c.AD01CODASISTENCI 
-					from correspondenciaproceso a, fru700 b, fru400 c where a.ASISTENCIA=c.AD01CODASISTENCI and b.FRU04CODINT=c.FRU04CODINT and a.historia=294656
-					order by c.FRU4FECADD DESC, b.FRU7CODINTERNO, b.FR28DESPRODUCTO,  c.AD01CODASISTENCI</li>
+					<li>SELECT B.FRU7CODINTERNO, B.FR28DESPRODUCTO, C.FRU4FECADD, C.AD01CODASISTENCI 
+					FROM CORRESPONDENCIAPROCESO A, FRU700 B, FRU400 C WHERE A.ASISTENCIA=C.AD01CODASISTENCI AND B.FRU04CODINT=C.FRU04CODINT AND A.HISTORIA=294656
+					ORDER BY C.FRU4FECADD DESC, B.FRU7CODINTERNO, B.FR28DESPRODUCTO,  C.AD01CODASISTENCI</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRODUCTOS PRN NO SALGAN EN EL CARRO</h3>
 				<ul>
-					<li>select * from sg2500 where CODPARAM='PRNCARRO'</li>
-					<li>elect * from sg2500 where codparam like '%PRN%'</li>
+					<li>SELECT * FROM SG2500 WHERE CODPARAM='PRNCARRO'</li>
+					<li>SELECT * FROM SG2500 WHERE CODPARAM LIKE '%PRN%'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -1005,50 +1005,51 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 					<li>NO SÉ PORQUE ESE PRODUCTO SE HA QUEDADO SIN CÓDIGO EXTERNO Y ENTONCES, LUEGO NO PUEDE PONERLE COMPONENTES COMO PRINCIPIOS ACTIVOS.</li>
 					<li>EL FR73CODPRODUCTO ES EL FCH50CODEXT</li>
 					<li>PARA CORREGIR ESTOS CASOS CREE UN PROCEDIMIENTO EN SAVAC QUE SE LLAMA INSERTAR_V3 Y AL QUE SE LE PASA EL FCH50IDPRODUCT Y SE ENCARGA DE HACER QUE EL PRODUCTO BAJE A V3. CUANDO EJECUTES EL INSERTA V3 EN LA CASILLA INPUT PONES EL FCH50IDPRODUCT.</li>
-					<li>select rowid, a.* from fch5000 a where FCH50CODEXT is null</li>
-					<li>select * from fr7300 where FR73CODNAC in ()</li>
+					<li>SELECT ROWID, A.* FROM FCH5000 A WHERE FCH50CODEXT IS NULL</li>
+					<li>SELECT * FROM FR7300 WHERE FR73CODNAC IN ()</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PRODUCTOS SANITARIOS</h3>
 				<ul>
-					<li>select rowid, a.FR73INDPRODSAN from fr7300 a where FR73CODNAC='492181'</li>
+					<li>SELECT ROWID, A.FR73INDPRODSAN FROM FR7300 A WHERE FR73CODNAC='492181'</li>
 					<li>EN BDCM DESMARCAR EL CHECK "PRODUCTO SANITARIO"</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PROPUESTAS Y ALERTAS BDCM WEB</h3>
 				<ul>
-					<li>select * from inf.inf2000</li>
+					<li>SELECT * FROM INF.INF2000</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>PROTOCOLOS</h3>
 				<ul>
-					<li>select * from pet1000d where pet10desprotocol like 'trauma%'</li>
-					<li>select * from pet1102j where pet10idprotocol=395</li>
-					<li>select * from pet1100 where pet11idline=2549</li>
-					<li>PROTOCOLOS PAUTADOS: select * from pet4000</li>
+					<li>SELECT * FROM PET1000D WHERE PET10DESPROTOCOL LIKE 'TRAUMA%'</li>
+					<li>SELECT * FROM PET1102J WHERE PET10IDPROTOCOL=395</li>
+					<li>SELECT * FROM PET1100 WHERE PET11IDLINE=2549</li>
+					<li>PROTOCOLOS PAUTADOS: SELECT * FROM PET4000</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>RECETARIO</h3>
 				<ul>
-					<li>select * from seg2500 where SEG25CODPARAM='RECIPENARC'</li>
-					<li>select * from seg2500 where SEG25CODPARAM='RECIPEEC'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM='RECIPENARC'</li>
+					<li>SELECT * FROM SEG2500 WHERE SEG25CODPARAM='RECIPEEC'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>REFRESCO PANTALLA MIRA</h3>
 				<ul>
-					<li>REFRESCO EN MINUTOS PANTALLA PRINCIPAL: select * from seg2500 where SEG25CODPARAM='MTODOTIMER'</li>
-					<li>REFRESCO EN MINUTOS DETALLE DEL PACIENTE: select * from seg2500 where SEG25CODPARAM='PADETTIMER'</li>
+					<li>REFRESCO EN MINUTOS PANTALLA PRINCIPAL: SELECT * FROM SEG2500 WHERE SEG25CODPARAM='MTODOTIMER'</li>
+					<li>REFRESCO EN MINUTOS DETALLE DEL PACIENTE: SELECT * FROM SEG2500 WHERE SEG25CODPARAM='PADETTIMER'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>RUTA ETIQUETAS V3</h3>
 				<ul>
-					<li>select * from sg2500 where descparam like '%etiq%'</li>
+					<li>SELECT * FROM SG2500 WHERE DESCPARAM LIKE '%ETIQ%'</li>
+					<li>SELECT ROWID, A.* FROM SG2500 A WHERE CODPARAM LIKE 'IMPET%'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -1063,13 +1064,13 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ALERTAS PM</h3>
 				<ul>
-					<li>ALERTA EN LA FIRMA: pet9000.pet90swtvisible</li>
-					<li>ALERTA EN LA VALIDACIÓN: pet9000.pet90swtvisibleval</li>
-					<li>ALERTA AL ADMINISTRAR: pet9000.pet90swtvisibleadm</li>
-					<li>COLORES EN LAS LÍNEAS DE PM: pet9400</li>
-					<li>TIPO DE ALERTA, FIN DE PAUTA, PRODUCTO: pet9400.pet94wrntype</li>
-					<li>ALERTA VISIBLE O NO: pet9400.pet94swtvisible</li>
-					<li>ALERTA RESTRICTIVA, PERMITE CONTINUAR O NO: pet9400.pet94swtcontinue</li>
+					<li>ALERTA EN LA FIRMA: PET9000.PET90SWTVISIBLE</li>
+					<li>ALERTA EN LA VALIDACIÓN: PET9000.PET90SWTVISIBLEVAL</li>
+					<li>ALERTA AL ADMINISTRAR: PET9000.PET90SWTVISIBLEADM</li>
+					<li>COLORES EN LAS LÍNEAS DE PM: PET9400</li>
+					<li>TIPO DE ALERTA, FIN DE PAUTA, PRODUCTO: PET9400.PET94WRNTYPE</li>
+					<li>ALERTA VISIBLE O NO: PET9400.PET94SWTVISIBLE</li>
+					<li>ALERTA RESTRICTIVA, PERMITE CONTINUAR O NO: PET9400.PET94SWTCONTINUE</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
@@ -1081,42 +1082,167 @@ document.addEventListener('cut',function(e){e.preventDefault();e.stopPropagation
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ACTUALIZAR CONTRASEÑA Y GRUPO DE USUARIO</h3>
 				<ul>
-					<li>update sg0200 set sg01cod='todo' where sg02cod='jdm83p'</li>
-					<li>update sg0200 set sg02passw='022avl95g8hpgh' where sg02cod='jdm83p'</li>
+					<li>UPDATE SG0200 SET SG01COD='TODO' WHERE SG02COD='JDM83P'</li>
+					<li>UPDATE SG0200 SET SG02PASSW='022AVL95G8HPGH' WHERE SG02COD='JDM83P'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ALERGIAS PACIENTE POR COMPONENTE</h3>
 				<ul>
-					<li>select a.ci22nombre, a.ci22priapel, a.ci22segapel, b.frt9texto
-					from ci2200 a, frt900 b
-					where a.ci21codpersona=b.ci21codpersona and frt9texto like '%penicilina%'</li>
+					<li>SELECT A.CI22NOMBRE, A.CI22PRIAPEL, A.CI22SEGAPEL, B.FRT9TEXTO
+					FROM CI2200 A, FRT900 B WHERE A.CI21CODPERSONA=B.CI21CODPERSONA AND FRT9TEXTO LIKE '%PENICILINA%'</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>ALERGIAS PACIENTE EN LISTADO</h3>
 				<ul>
-					<li>select distinct pac01mrn,FCH05DESAP
-					from pac3000 a,FCH0500j b,pac0100 c
-					where EST05ID_TYPE=154
-					and PAC30DATADD>='28/10/2019'
-					and FCH05IDAP=a.PAC30IDFK
-					and a.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
-					and FCH47IDCT=8
-					union all
-					select distinct pac01mrn,FCH10DESTG
-					from pac3000 a,fch1000j,pac0100 c
-					where EST05ID_TYPE=154
-					and PAC30DATADD>='28/10/2019'
-					and FCH47IDCT=11
-					and a.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
-					and FCH09IDTYPTG||'|'||FCH10IDTG=PAC30IDFK</li>
+					<li>SELECT DISTINCT PAC01MRN,FCH05DESAP
+					FROM PAC3000 A,FCH0500J B,PAC0100 C
+					WHERE EST05ID_TYPE=154
+					AND PAC30DATADD>='28/10/2019'
+					AND FCH05IDAP=A.PAC30IDFK
+					AND A.PAC01IDPATIENT_INT=C.PAC01IDPATIENT_INT
+					AND FCH47IDCT=8
+					UNION ALL
+					SELECT DISTINCT PAC01MRN,FCH10DESTG
+					FROM PAC3000 A,FCH1000J,PAC0100 C
+					WHERE EST05ID_TYPE=154
+					AND PAC30DATADD>='28/10/2019'
+					AND FCH47IDCT=11
+					AND A.PAC01IDPATIENT_INT=C.PAC01IDPATIENT_INT
+					AND FCH09IDTYPTG||'|'||FCH10IDTG=PAC30IDFK</li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 			<h3>LLAMADA CONSULTA DE EXISTENCIAS</h3>
 				<ul>
-					<li>"C:\Program Files (x86)\SAVAC\LauncherProd.exe" US:[USERIDEXT];PI:[USERPASSWORDENCRYPTEDBD];PR:FR0095</li>
+					<li>"C:\PROGRAM FILES (X86)\SAVAC\LAUNCHERPROD.EXE" US:[USERIDEXT];PI:[USERPASSWORDENCRYPTEDBD];PR:FR0095</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>CONSULTA INFORME KIT</h3>
+				<ul>
+					<li>SELECT FORMULA.FR73DESPRODUCTO,
+					FRS3300.FRS33CODLIBROKIT,
+					FRH700.FRH7DESFORMFAR,
+					FRS3300.FRS33CANTIFABRICADA,
+					FRS3300.FRS33FECFABRICACION,
+					FRS3500.FRS35DOSIS / FRS3300.FRS33CANTIFABRICADA AS FRS35DOSIS,
+					NVL2 (
+					FRP1000.FRP10IDPRESENTACION,
+					FRP1000.FRP10DESPRESENTACION
+					|| '('
+					|| ESCANDALLO.FR73DESPRODUCTO
+					|| ')',
+					ESCANDALLO.FR73DESPRODUCTO)
+					AS PRODESCANDALLO,
+					ESCANDALLO.FR73CODPRODUCTO AS CODPRODUCTO,
+					NVL (FRP1000.FRP10CODINTFAR, ESCANDALLO.FR73CODINTFAR) AS CODINTFAR,
+					FRS3500.FR93CODUNIMEDIDA,
+					FRS33DESPROCESO,
+					FR1.FRFN16 (FRD100.FRD1CODINTERNO, -1) FRS35LOTE,
+					FRS3500.FRS35CADUCIDADLOTE,
+					FRS3500.FRS35DOSIS AS DOSISTOTAL,
+					FRS33FECCADUCIDAD,
+					ESCANDALLO.FR73CODNAC,
+					NVL (FORMULA.FR73OBSCITOSTATICOS, FRP10OBSCITOSTATICOS) OBSERVACIONES,
+					FRS35ELABORACION,
+					FRS35ACONDICIONAMIENTO,
+					FRS33INDICACIONESPAC,
+					FRS33CONTROLANALITICO,
+					FRS33REFBIBLIOGRAFICA,
+					NVL (FR6900.FR69FECUPD, FR6900.FR69FECADD) FECULTREVIS69,
+					(SELECT MAX(NVL(FR7100.FR71FECUPD, FR7100.FR71FECADD) ) FROM FR7100 WHERE FR7100.FR69CODPROCFABRIC=FR6900.FR69CODPROCFABRIC) FECULTREVIS71,
+					FRS3300.FRS33DESLOTE,
+					FRS3300.FRS33OBSERVACIONES
+					FROM FR7300 FORMULA,
+					FR7300 ESCANDALLO,
+					FRS3300,
+					FRS3500,
+					FRH700,
+					FRP1300,
+					FRP1000,
+					FRD100,
+					FR6900
+					WHERE FRS3300.FR73CODPRODUCTO = FORMULA.FR73CODPRODUCTO
+					AND ESCANDALLO.FR73CODPRODUCTO = FRS3500.FR73CODPRODUCTO
+					AND FORMULA.FRH7CODFORMFAR = FRH700.FRH7CODFORMFAR(+)
+					AND FORMULA.FR73CODPRODUCTO = FR6900.FR73CODPRODUCTO
+					AND FRS3500.FRS33CODLIBROKIT = FRS3300.FRS33CODLIBROKIT
+					AND ESCANDALLO.FR73CODPRODUCTO = FRP1300.FR73CODPRODUCTO(+)
+					AND FRP1300.FRP10IDPRESENTACION = FRP1000.FRP10IDPRESENTACION(+)
+					AND FRS3500.FRS35CODINTERNO = FRD100.FRD1CODFK(+)
+					AND FRS3300.FRS33CODLIBROKIT = 296
+					AND FRD100.FR90CODTIPMOV(+) = 1
+					AND FRS35ELABORACION = 0
+					AND FRS35ACONDICIONAMIENTO = 0
+					ORDER BY FRS35ORDEN</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>DOSIFICACIONES VACÍAS</h3>
+				<ul>
+					<li>SELECT B.FCH50CODINT, B.FCH50DESPRODUCT, A.FCH61DOSE FROM FCH.FCH6100 A, FCH5000 B WHERE A.FCH50IDPRODUCT=B.FCH50IDPRODUCT AND A.EST01CODCENTER IN(3) AND A.FCH61DOSE IS NULL</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>CONSULTAR DISPENSACIONES PACIENTE</h3>
+				<ul>
+					<li>SELECT * FROM FRU200 WHERE AD01CODASISTENCI IN (SELECT ASISTENCIA FROM CORRESPONDENCIAPROCESO WHERE HISTORIA=9017811)</li>
+					<li>SELECT * FROM FRU700 WHERE FRU04CODINT IN (SELECT FRU04CODINT FROM FRU400 WHERE AD01CODASISTENCI IN (SELECT ASISTENCIA FROM CORRESPONDENCIAPROCESO WHERE HISTORIA=9017811))</li>
+					<li>SELECT * FROM FR6600 WHERE FR66CODPETICION=XX</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3>MIRA 1.16.1</h3>
+				<ul>
+					<li>Autovalidación en BDCM</li>
+					<li>Autovalidación en MIRA</li>
+					<li>Prescripción de Enfermería BDCM</li>
+					<li>Prescripción de Enfermería MIRA</li>
+					<li>Prescripción de Enfermería MIRA Mobile</li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+				<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
+				</ul>
+		</div>
+		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+			<h3></h3>
+				<ul>
+					<li></li>
 				</ul>
 		</div>
 		<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
