@@ -52,7 +52,7 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Eliminar TO-DO</h3>
 <ul>
-<li>borrar la scr1000, que es la tabla donde se guardar la configuración de la pantalla de to-do por cada usuario.</li>
+<li>Borrar la scr1000, que es la tabla donde se guardar la configuración de la pantalla de to-do por cada usuario.</li>
 </ul>
 </div>
 	
@@ -67,6 +67,7 @@
 <h3>Error en presencia del producto</h3>
 <ul>
 <li>create or replace synonym savac.pet1002j for pet.pet1002j</li>
+<br>
 <li>create or replace synonym savac.pet1003j for pet.pet1003j</li>
 </ul>
 </div>
@@ -75,6 +76,7 @@
 <h3>Errores incremental</h3>
 <ul>
 <li>select * from est.est4500 where est45load in ('migpk.cargaproductos' ,'migpk.cargapresentaciones') order by est45date desc</li>
+<br>
 <li>En el esquema savac - jobs hay dos que se ejecutan en horas distintas.</li>
 </ul>
 </div>
@@ -97,6 +99,7 @@
 <h3>Excipientes</h3>
 <ul>
 <li>select * from frs400</li>
+<br>
 <li>select * from frs501j</li>
 </ul>
 </div>
@@ -124,9 +127,13 @@
 <h3>Al acceder a la PM se queda pensando</h3>
 <ul>
 <li>Para comprobar el usuario aparezca en la adm32, en la adm32 hay que revisar que los usuarios sean médicos.</li>
+<br>
 <li>select * from adm3200 a where adm11codproc_asist in (7193997)</li>
+<br>
 <li>select * from org0100 where org01id in (2129, 96)</li>
+<br>
 <li>org02codextcat corresponde con ad31codpuesto</li>
+<br>
 <li>select * from org0200d</li>
 </ul>
 </div>
@@ -135,8 +142,11 @@
 <h3>Fabricaciones kits</h3>
 <ul>
 <li>\\127.0.0.1 es impresora en local con el nombre zebrafarma1 que tiene que estar compartida.</li>
+<br>
 <li>Se debe copiar la carpeta etiqueta en la raíz de la instalación de savac.</li>
+<br>
 <li>En la sg2500 pone como debe llamarse la impresora de etiquetas, en este caso, zebrafarma1</li>
+<br>
 <li>select * from sg2500 where codparam='etiq' or codparam='impetiqfm' or codparam='impetiqfc'</li>
 </ul>
 </div>
@@ -151,13 +161,19 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Restricciones</h3>
 <ul>
-<li><strong>Asociar en MIRA el CODEXT de maestras de V3:</strong> select rowid, a.* from fch2900 a where fch29idrestric=525</li>
-<li><strong>Descripción restricción MIRA:</strong> select rowid, a.* from fch2900d a where fch29idrestric=525</li>
-<li><strong>Buscar restricción en MIRA:</strong> select * from fch2900d where fch29desrestric like '%cumple:%'</li>
-<li><strong>Asociar restricción a un producto en MIRA:</strong> select * from fch6300 where fch29idrestric=525</li>
-<li><strong>Maestra restricciones V3:</strong> select rowid, a.* from fra120 a where fra12idrest=209</li>
-<li><strong>Asociar restricción a una marca en V3:</strong> select rowid, a.* from fra900 a</li>
-<li><strong>Asociar restricción a una presentación en V3:</strong> select rowid, a.* from fra110 a</li>
+<li>select rowid, a.* from fch2900 a where fch29idrestric=525 ---asociar en MIRA el CODEXT de maestras de V3</li>
+<br>
+<li>select rowid, a.* from fch2900d a where fch29idrestric=525 ---descripción restricción MIRA</li>
+<br>
+<li>select * from fch2900d where fch29desrestric like '%cumple:%' ---buscar restricción en MIRA</li>
+<br>
+<li>select * from fch6300 where fch29idrestric=525 ---asociar restricción a un producto en MIRA</li>
+<br>
+<li>select rowid, a.* from fra120 a where fra12idrest=209 ---maestra restricciones V3</li>
+<br>
+<li>select rowid, a.* from fra900 a ---asociar restricción a una marca en V3</li>
+<br>
+<li>select rowid, a.* from fra110 a: ---asociar restricción a una presentación en V3</li>
 </ul>
 </div>
 
@@ -196,8 +212,11 @@
 <h3>Laboratorios/proveedor</h3>
 <ul>
 <li>select  rowid, a.fr79codproveedor_a,fr79codproveedor_b,fr79codproveedor_c from fr7300 a where fr73codnac='505171'</li>
+<br>
 <li>select * from fr7900 where fr79proveedor like 'abbott laboratories%'</li>
+<br>
 <li>select * from fch1100 where fch11provname  like 'abbott laboratories%'</li>
+<br>
 <li>Guru ha creado lo siguiente para los provedores que  no pasan de bdcm web a v3: he creado un pl que está en savac, lo he dejado tanto en caravaca como en el reina. se llama inserta_fr7900 y se encarga de insertar en v3 los laboratorios que han llegado a mira pero no tienen código externo que les permita relacionarlos con v3.</li>
 </ul>
 </div>
@@ -205,22 +224,20 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Relación carro KARDEX</h3>
 <ul>
-<li><strong>Relación carro/departamento:</strong></li>
-<p>select * from intgr.fr0700 where fr07descarro like 'hg-hdmq%'</p>
-<li><strong>Código del carro y kardex al que va:</strong></li>
-<p>select rowid, a.* from intgr.ar_carro a where fr07codcarro=46</p>
+<li><strong>Relación carro/departamento:</strong> select * from intgr.fr0700 where fr07descarro like 'hg-hdmq%'</li>
+<br>
+<li><strong>Código del carro y kardex al que va:</strong> select rowid, a.* from intgr.ar_carro a where fr07codcarro=46</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Teléfono oficina</h3>
 <ul>
-<li><strong>General:</strong></li>
-<p>968 92 84 70</p>
-<li><strong>Sole:</strong></li>
-<p>662 637 442</p>
-<li><strong>JL:</strong></li>
-<p>662 637 454</p>
+<li>General: 968 92 84 70</li>
+<br>
+<li>Sole: 662 637 442</li>
+<br>
+<li>JL: 662 637 454</li>
 </ul>
 </div>
 
@@ -234,14 +251,13 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Instalación pasiva SAVAC</h3>
 <ul>
-<li><strong>Desinstalar:</strong></li>
-<p>msiexec.exe /x "nombre_instalador.msi" /qn ó msiexec.exe /x {dad46004-36c7-4575-82ab-f9dc5df654ac} /qn</p>
-<li><strong>Instalar:</strong></li>
-<p>msiexec.exe /i "nombre_instalador.msi" /qn</p>
-<li><strong>El guid se obtiene en CMD:</strong></li>
-<p>wmic product where name="savac integración"</p>
-<li><strong>Desinstalar:</strong></li>
-<p>wmic product get name product where name="savac integración" call uninstall</p>
+<li>msiexec.exe /x "nombre_instalador.msi" /qn ó msiexec.exe /x {dad46004-36c7-4575-82ab-f9dc5df654ac} /qn ---desinstalar</li>
+<br>
+<li>msiexec.exe /i "nombre_instalador.msi" /qn ---instalar</li>
+<br>
+<li>wmic product where name="savac integración" ---el guid se obtiene en CMD</li>
+<br>
+<li>wmic product get name product where name="savac integración" call uninstall ---desinstalar</li>
 </ul>
 </div>
 
@@ -249,6 +265,7 @@
 <h3>Regularizable</h3>
 <ul>
 <li>select rowid, a.frp10indregulariza from frp1000 a where frp10idpresentacion='3128'</li>
+<br>
 <li>select rowid, a.fr73indregulariza from fr7300 a where fr73codproducto='5488'</li>
 </ul>
 </div>
@@ -257,9 +274,13 @@
 <h3>Dispensaciones lote</h3>
 <ul>
 <li>select * from fru400</li>
+<br>
 <li>select * from fru700 where fr73codproducto='29326'</li>
+<br>
 <li>select * from fr4900 where fr49deslote='4n78c'</li>
+<br>
 <li>select * from fr6600</li>
+<br>
 <li>select * from fr7300 where fr73codintfar='p-348221'</li>
 </ul>
 </div>
@@ -275,10 +296,14 @@
 <h3>Dispensaciones</h3>
 <ul>
 <li>select * from fru400</li>
+<br>
 <li>select * from fru700</li>
+<br>
 <li>select * from fr6600</li>
+<br>
 <li>select * from pet6000</li>
-<li><strong>Fecha próxima dispensación:</strong> select * from frx0200 order by frx02fecproxdisp desc</li>
+<br>
+<li>select * from frx0200 order by frx02fecproxdisp desc ---fecha próxima dispensación</li>
 </ul>
 </div>
 
@@ -299,14 +324,13 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Campos en modo lectura en V3</h3>
 <ul>
-<li><strong>Lectura genéricos:</strong></li>
-<p>select * from fr1.frg200_frp001</p>
-<li><strong>Lectura presentaciones:</strong></li>
-<p>select * from fr1.frg200_frp001</p>
-<li><strong>Lectura marcas:</strong></li>
-<p>select * from fr1.frg200_frp001</p>
-<li><strong>Maestra:</strong></li>
-<p>select * from frg200</p>
+<li>select * from fr1.frg200_frp001 ---lectura genéricos</li>
+<br>
+<li>select * from fr1.frg200_frp001 ---lectura presentaciones</li>
+<br>
+<li>select * from fr1.frg200_frp001 ---lectura marcas</li>
+<br>
+<li>select * from frg200 ---maestra</li>
 </ul>
 </div>
 
@@ -314,6 +338,7 @@
 <h3>Cambiar estado PM en MIRA</h3>
 <ul>
 <li>select rowid, a.* from pet0000 a where pac01idpatient_int = 988165 order by pet00datadd desc</li>
+<br>
 <li>select * from pac0100 where pac01mrn = 5583862</li>
 </ul>
 </div>
@@ -343,6 +368,7 @@
 <h3>Bloquear usuario SAVAC/MIRA</h3>
 <ul>
 <li>select rowid, a.seg02datlockpssw from seg0200 a where seg02login='amc27a'</li>
+<br>
 <li>select rowid, a.sg02fecbpassw from sg0200 a where lower(sg02cod)='amc27a'</li>
 </ul>
 </div>
@@ -350,34 +376,35 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Asistencias</h3>
 <ul>
-<li><strong>Departamento:</strong></li>
-<p>select ad02coddpto, ad02desdpto from ad0200 where ad02desdpto like '%neu%'</p>
-<li><strong>Departamento/NHC:</strong></li>
-<p>select * from ad0500 a where a.ad02coddpto=11 and a.ad01codasistenci in (select b.ad01codasistenci from ad0100 b where b.ci22numhistoria=15243)</p>
-<li><strong>Buscar proceso para ver departamento:</strong></li>
-<p>select * from ad0400 where ad07codproceso='12312009'</p>
-<li><strong>Cambiar departamento a través del proceso:</strong></li>
-<p>update ad0400 set ad02coddpto='18' where ad07codproceso='11180229' and ad02coddpto='9'</p>
-<li><strong>Asistencias por NHC:</strong></li>
-<p>select * from ad0500 where ad01codasistenci in (select b.ad01codasistenci from ad0100 b where b.ci22numhistoria='175155')</p>
-<li><strong>UPDATE AD0500 para cambiar departamento por otro:</strong></li>
-<p>update ad0500 set ad02coddpto='18' where ad01codasistenci in (20755165) and ad02coddpto='9'</p>
-<li><strong>Departamentos usuario:</strong></li>
-<p>select * from ad0300 where sg02cod='jho22k'</p>
-<li><strong>UPDATE departamentos usuario:</strong></li>
-<p>update ad0300 set ad02coddpto='10' where sg02cod='jho22k' and ad02coddpto='15'</p>
-<li><strong>AD0100:</strong></li>
-<p>select * from ad0100 a where ad01codasistenci in (2098862530)</p>
-<li><strong>UPDATE AD0100 para abrir asistencia con fecha fin a null:</strong></li>
-<p>update ad0100 set ad01fecfin='' where ad01codasistenci in (23418965)</p>
-<li><strong>AD0500:</strong></li>
-<p>select * from ad0500 a where ad01codasistenci in (2098792224, 2098894708, 2098897884)</p>
-<li><strong>UPDATE AD0500 para abrir asistencia con fecha fin a null:</strong></li>
-<p>update ad0500 set ad05fecfinrespon='' where ad01codasistenci in (23418965)</p>
-<li><strong>AD0800:</strong></li>
-<p>select * from ad0800 a where ad01codasistenci in (2098792224)</p>
-<li><strong>UPDATE AD0800 para abrir asistencia con fecha fin a null:</strong></li>
-<p>update ad0800 set ad08fecfin='' where ad01codasistenci in (23418965)</p>
+<li>select ad02coddpto, ad02desdpto from ad0200 where ad02desdpto like '%neu%' ---departamento</li>
+<br>
+<li>select * from ad0500 a where a.ad02coddpto=11 and a.ad01codasistenci in (select b.ad01codasistenci from ad0100 b where b.ci22numhistoria=15243) ---departamento/NHC</li>
+<br>
+<li>select * from ad0400 where ad07codproceso='12312009' ---buscar proceso para ver departamento</li>
+<br>
+<li>update ad0400 set ad02coddpto='18' where ad07codproceso='11180229' and ad02coddpto='9' ---cambiar departamento a través del proceso</li>
+<br>
+<li>select * from ad0500 where ad01codasistenci in (select b.ad01codasistenci from ad0100 b where b.ci22numhistoria='175155') ---asistencias por NHC</li>
+<br>
+<li>update ad0500 set ad02coddpto='18' where ad01codasistenci in (20755165) and ad02coddpto='9' ---update ad0500 para cambiar departamento por otro</li>
+<br>
+<li>select * from ad0300 where sg02cod='jho22k' ---departamentos usuario</li>
+<br>
+<li>update ad0300 set ad02coddpto='10' where sg02cod='jho22k' and ad02coddpto='15' ---update departamentos usuario</li>
+<br>
+<li>select * from ad0100 a where ad01codasistenci in (2098862530) ---ad0100</li>
+<br>
+<li>update ad0100 set ad01fecfin='' where ad01codasistenci in (23418965) ---update ad0100 para abrir asistencia con fecha fin a null</li>
+<br>
+<li>select * from ad0500 a where ad01codasistenci in (2098792224, 2098894708, 2098897884) ---ad0500</li>
+<br>
+<li>update ad0500 set ad05fecfinrespon='' where ad01codasistenci in (23418965) ---update ad0500 para abrir asistencia con fecha fin a null</li>
+<br>
+<li>select * from ad0800 a where ad01codasistenci in (2098792224) ---ad0800</strong></li>
+<br>
+<li>update ad0800 set ad08fecfin='' where ad01codasistenci in (23418965) ---update ad0800 para abrir asistencia con fecha fin a null</li>
+<p></p>
+<br>
 </ul>
 </div>
 		
@@ -385,7 +412,9 @@
 <h3>Altas usuarios</h3>
 <ul>
 <li>select rowid, a.* from seg0200  a where lower(seg02login)='elr55d'</li>
+<br>
 <li>select rowid, a.* from scr1100 a where seg02id='3455'</li>
+<br>
 <li>select * from scr1200 where seg02id='3455'</li>
 </ul>
 </div>
@@ -396,6 +425,7 @@
 <li>select fr13codlibroestupef, fr13fecpeticion, fr13entrada, fr13salida, fr13saldos, ad02coddpto, fr73codproducto, sg02cod_add, fr79codproveedor, frw40codalmacens,fr13fecadd from fr1300 where fr73codproducto in (7988) and frw40codalmacens=64</li>
 </ul>
 </div>
+
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Servicios sin guía</h3>
 <ul>
@@ -407,7 +437,9 @@
 <h3>Solapamientos</h3>
 <ul>
 <li>Hay que la fecha/hora de inicio/fin no coincida con la fecha/hora del siguiente.</li>
+<br>
 <li>select * from ci2200 where ci22numhistoria='45818'</li>
+<br>
 <li>select rowid, a.* from ad0100 a where ci21codpersona='70536' order by ad01fecinicio desc</li>
 </ul>
 </div>
@@ -423,8 +455,11 @@
 <h3>Gestión de usuarios</h3>
 <ul>
 <li>select rowid, a.* from seg0200 a where lower(seg02login)='fgr25d'</li>
+<br>
 <li>select * from seg0100d</li>
+<br>
 <li>select rowid, a. * from sg0200 a where lower(sg02cod)='fgr25d'</li>
+<br>
 <li>select * from sg0100</li>
 </ul>
 </div>
@@ -432,10 +467,9 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Pacientes ingresados</h3>
 <ul>
-<li><strong>Número de camas activas:</strong></li>
-<p>select count(1) from ad1500 where ad15fecfin is null</p>
-<li><strong>Número de pacientes ingresados:</strong></li>
-<p>select count(1) from ad1500 where ad01codasistenci is not null and ad15fecfin is null</p>
+<li>select count(1) from ad1500 where ad15fecfin is null ---número de camas activas</li>
+<br>
+<li>select count(1) from ad1500 where ad01codasistenci is not null and ad15fecfin is null ---número de pacientes ingresados</li>
 </ul>
 </div>
 
@@ -450,6 +484,7 @@
 <h3>Versión V3 en BBDD</h3>
 <ul>
 <li>select * from esinstall</li>
+<br>
 <li>select * from esupdate order by FECHA_ALTA desc</li>
 </ul>
 </div>
@@ -465,7 +500,9 @@
 <h3>Bloquear externos en MIRA</h3>
 <ul>
 <li>select * from seg2500 where SEG25CODPARAM='MPROAMB'</li>
-<li><strong>Vacío:</strong> todos los ámbito lectura/escritura</li>
+<br>
+<li>Vacío: todos los ámbito lectura/escritura</li>
+<br>
 <li>Según código de asistencia ADM2700D, se pueden poder varios separados por comas: SEG25DEFVALUE</li>
 </ul>
 </div>
@@ -508,7 +545,7 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Prefijo para informes RPT</h3>
 <ul>
-<li><strong>SE CONFIGURA PARA QUE PRIMERO COJA EL PREFIJO QUE LE INDICAS EN:</strong> select * from sg2500 where codparam='prefinfcen'</li>
+<li>select * from sg2500 where codparam='prefinfcen' ---se configura para que primero coja el prefijo que le indicas en</li>
 </ul>
 </div>
 
@@ -537,7 +574,9 @@
 <h3>Log</h3>
 <ul>
 <li>C:\Proyectos\pmUnica\log</li>
+<br>
 <li>C:\Proyectos\bdcmmith\log</li>
+<br>
 <li>C:\Proyectos\bdcm\log</li>
 </ul>
 </div>
@@ -566,14 +605,13 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Diagnóstico facturación</h3>
 <ul>
-<li><strong>V3:</strong></li>
-<p>select rowid,a.frs3coddiagnostico from fr7300_od a where fr73codproducto='14146'</p>
-<li><strong>Maestra V3:</strong></li>
-<p>select * from frs300</p>
-<li><strong>Diagnóstico/producto/centro MIRA:</strong></li>
-<p>select * from fchc250c</p>
-<li><strong>Maestra diagnóstico MIRA:</strong></li>
-<p>select * from fch2500</p>
+<li>select rowid,a.frs3coddiagnostico from fr7300_od a where fr73codproducto='14146' ---v3</li>
+<br>
+<li>select * from frs300 ---maestra v3</li>
+<br>
+<li>select * from fchc250c ---diagnóstico/producto/centro mira</li>
+<br>
+<li>select * from fch2500 ---maestra diagnóstico mira</li>
 </ul>
 </div>
 
@@ -581,6 +619,7 @@
 <h3>Devolución botiquines</h3>
 <ul>
 <li>select * from frd400</li>
+<br>
 <li>select * from frd401j</li>
 </ul>
 </div>
@@ -596,8 +635,11 @@
 <h3>Deducciones</h3>
 <ul>
 <li>select FR92CODIGO from fr7300 where FR73CODNAC='600010'</li>
+<br>
 <li>select * from fr9200</li>
-<li>Maestra deducciones: select * from fr9200</i></li>
+<br>
+<li>select * from fr9200 ---maestra deducciones</li>
+<br>
 <li><strong>FR7300:</strong> el cod de deducciones viene en el campo FR92CODIGO</li>
 </ul>
 </div>
@@ -613,6 +655,7 @@
 <h3>Código de barras e IVA</h3>
 <ul>
 <li>select distinct (c.fch50idproduct),a.FCH50CODINT from fch6000 c, fch6000 h, fch5000 a where c.est01codcenter=0 and c.fch50idproduct=a.fch50idproduct and h.est01codcenter!=0 and c.fch50idproduct =h.fch50idproduct and nvl(c.fch31idvat,0)!= nvl(h.fch31idvat,0)</li>
+<br>
 <li>select distinct (c.fch50idproduct),b.FCH50CODINT from fch6000 c, fch6000 h,fch5000 b where c.est01codcenter=0 and c.fch50idproduct=b.fch50idproduct and h.est01codcenter!=0 and c.fch50idproduct =h.fch50idproduct and nvl(c.FCH60BARCODE,0)!= nvl(h.FCH60BARCODE,0) and b.EST05IDVALUE_CLS=49</li>
 </ul>
 </div>
@@ -628,7 +671,9 @@
 <h3>Albarán valorado</h3>
 <ul>
 <li>select rowid, a.* from fr6500 a where FR73CODPRODUCTO='23230' and CI21CODPERSONA='800785'</li>
+<br>
 <li>select * from ci2200 where CI22NUMHISTORIA='620483'</li>
+<br>
 <li>select * from fr7300 where FR73CODINTFAR='P-346976'</li>
 </ul>
 </div>
@@ -637,7 +682,9 @@
 <h3>Control lotes de entrada</h3>
 <ul>
 <li>FRP10INDCTRLLOTE, FR73INDCTRLOTSAL, FR73INDCADESP</li>
+<br>
 <li>select rowid, a.FRP10INDCTRLLOTE from frp1000 a where FRP10CODINTFAR='PR-002900'.</li>
+<br>
 <li>select rowid, a.FR73INDCTRLOTSAL, FR73INDCADESP from fr7300 a where FR73CODNAC in ('677380','654536')</li>
 </ul>
 </div>
@@ -672,8 +719,11 @@
 <h3>Centro por usuario</h3>
 <ul>
 <li>El usuario tiene que tener su centro correspondiente para que pueda acceder a las guías por centro.</li>
+<br>
 <li>select * from est0100d</li>
+<br>
 <li>select rowid, a.* from seg4000 a where SEG02ID=1296</li>
+<br>
 <li>select * from seg0200 where SEG02LOGIN='ogm61g'</li>
 </ul>
 </div>
@@ -696,8 +746,8 @@
 <h3>Cadena de conexión DISCOVERER</h3>
 <ul>
 <li>C:\Ora11g\network\admin</li>
-<li>dba11g_wh</li>
-<li>dba11g_wh</li>
+<br>
+<li>dba11g_wh - dba11g_wh</li>
 </ul>
 </div>
 
@@ -711,18 +761,17 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Alergias</h3>
 <ul>
-<li><strong>Contenedor:</strong></li>
-<p>select * from fch4600</p>
-<li><strong>MIRA:</strong></li>
-<p>pet9000/pet9000d</p>
-<li><strong>No válidas:</strong></li>
-<p>Verificar el campo <AL1.3> y comprobar que en la tabla 'frt900' se ha registrado de forma correcta, sino, volver a procesar y si se ha procesado ignorar</p>
-<li><strong>SELENE:</strong></li>
-<p>select * from frt9000</p>
-<li><strong>Paciente:</strong></li>
-<p>frt600/frt400/frt900</p>
-<li><strong>Obtener:</strong></li>
-<p>select b.* from ci2200 a, frt900 b where a.ci21codpersona=b.ci21codpersona and ci22numhistoria=325521</p>
+<li>select * from fch4600 ---contenedor</li>
+<br>
+<li>pet9000/pet9000d ---mira</li>
+<br>
+<li>No válidas: Verificar el campo <AL1.3> y comprobar que en la tabla 'frt900' se ha registrado de forma correcta, sino, volver a procesar y si se ha procesado ignorar</li>
+<br>
+<li>select * from frt9000 ---selene</li>
+<br>
+<li>frt600/frt400/frt900 ---paciente</li>
+<br>
+<li>select b.* from ci2200 a, frt900 b where a.ci21codpersona=b.ci21codpersona and ci22numhistoria=325521</li>
 </ul>
 </div>
 
@@ -730,6 +779,7 @@
 <h3>Intervenciones</h3>
 <ul>
 <li>select * from pet3700</li>
+<br>
 <li>select * from pet0500 where PET37PHARMINTERV</li>
 </ul>
 </div>
@@ -738,8 +788,11 @@
 <h3>Interacciones</h3>
 <ul>
 <li>select * from fch1300d</li>
+<br>
 <li>select * from fch1400d</li>
+<br>
 <li>select * from fch1500d</li>
+<br>
 <li>select * from fch1600</li>
 </ul>
 </div>
@@ -747,12 +800,11 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Instrucciones de administración en protocolos</h3>
 <ul>
-<li><strong>Sacar de pet1000d el pet10idprotocol:</strong></li>
-<p>select * from pet1000d where PET10DESPROTOCOL like 'GINECOLOGIA%'</p>
-<li><strong>Filtrar en pet1102j por pet10idprotocol y sacar pet11idline:</strong></li>
-<p>select * from pet1102j where PET10IDPROTOCOL in (271,32) --and DESCLINE like 'METAMIZOL 2000 MG AMP/VIAL 5 ML PERFIV%'</p>
-<li><strong>Añadir instruccion en la pet1700:</strong></li>
-<p>select rowid, a.* from pet1700 a where PET11IDLINE in (63,1194)</p>
+<li>select * from pet1000d where PET10DESPROTOCOL like 'GINECOLOGIA%' ---sacar de pet1000d el pet10idprotocol</li>
+<br>
+<li>select * from pet1102j where PET10IDPROTOCOL in (271,32) --and DESCLINE like 'METAMIZOL 2000 MG AMP/VIAL 5 ML PERFIV%' ---filtrar en pet1102j por pet10idprotocol y sacar pet11idline</li>
+<br>
+<li>select rowid, a.* from pet1700 a where PET11IDLINE in (63,1194) ---añadir instruccion en la pet1700</li>
 </ul>
 </div>
 
@@ -768,6 +820,7 @@
 <h3>Iconos detalle pauta</h3>
 <ul>
 <li>select * from est0800 where EST05IDVALUE=367</li>
+<br>
 <li>select * from est0500d where EST05IDVALUE=367</li>
 </ul>
 </div>
@@ -776,10 +829,10 @@
 <h3>Iconos MIRA</h3>
 <ul>
 <li>Si 'hugeblob' sale en minúsculas es que no tiene icono</li>
-<li><strong>Todos:</strong></li>
-<p>select * from scr9000</p>
-<li><strong>Por producto:</strong></li>
-<p>select * from fch4200</p>
+<br>
+<li>select * from scr9000 ---todos</li>
+<br>
+<li>select * from fch4200 ---por producto</li>
 </ul>
 </div>
 
@@ -787,6 +840,7 @@
 <h3>Grupos terapéuticos</h3>
 <ul>
 <li>select * from fch1000</li>
+<br>
 <li>select * from fch4600</li>
 </ul>
 </div>
@@ -794,14 +848,13 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Grupo clínico</h3>
 <ul>
-<li><strong>Activar dosificacion por grupo clinico:</strong></li>
-<p>seg25.clinic_gr = 1</p>
-<li><strong>Grupos clínicos:</strong></li>
-<p>select * from pac3200</p>
-<li><strong>De una MIV:</strong></li>
-<p>select * from fch3000d</p>
-<li>Configurar:</strong></li>
-<p>ingc400</p>
+<li>seg25.clinic_gr = 1 ---activar dosificacion por grupo clinico:</strong></li>
+<br>
+<li>select * from pac3200 ---grupos clínicos</li>
+<br>
+<li>select * from fch3000d ---de una MIV:</strong></li>
+<br>
+<li>ingc400 ---configurar</li>
 </ul>
 </div>
 
@@ -815,8 +868,7 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Función renal</h3>
 <ul>
-<li><strong>Productos vigentes con función renal activada y observaciones:</strong></li>
-<p>select FRP10CODINTFAR,FRP10DESPRESENTACION,FRP10OBSFUNRENAL from frp1000 where FRP10INDFUNRENAL='-1' and FRP10FECFINVIG is null</p>
+<li>select FRP10CODINTFAR,FRP10DESPRESENTACION,FRP10OBSFUNRENAL from frp1000 where FRP10INDFUNRENAL='-1' and FRP10FECFINVIG is null ---productos vigentes con función renal activada y observaciones</li>
 </ul>
 </div>
 
@@ -831,6 +883,7 @@
 <h3>Quitar vigencia departamentos</h3>
 <ul>
 <li>select * from ad0300 where ad03fecfin is not null</li>
+<br>
 <li>update ad0300 set ad03fecfin=null where ad03fecfin is not null</li>
 </ul>
 </div>
@@ -839,6 +892,7 @@
 <h3>Usuarios por nodo</h3>
 <ul>
 <li>select * from seg3400</li>
+<br>
 <li>select count(*) from seg3400</li>
 </ul>
 </div>
@@ -846,12 +900,11 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Vías de administración</h3>
 <ul>
-<li><strong>Todas las vías del producto a nivel de sms:</strong></li>
-<p>select * from fch5600</p>
-<li><strong>Vías del centro:</strong></li>
-<p>select * from fch5900</p>
-<li><strong>Descripción de las vías:</strong></li>
-<p>select * from fch0100j</p>
+<li>select * from fch5600 ---todas las vías del producto a nivel de sms:</strong></li>
+<br>
+<li>select * from fch5900 ---vías del centro</li>
+<br>
+<li>select * from fch0100j ---descripción de las vías</li>
 </ul>
 </div>
 
@@ -859,7 +912,9 @@
 <h3>Usuarios admin TOAD</h3>
 <ul>
 <li>dba_wh/dba_wh</li>
+<br>
 <li>savac_wh/Cerruti1881</li>
+<br>
 <li>SYSTEM/Savac123456</li>
 </ul>
 </div>
@@ -882,9 +937,12 @@
 <h3>UBICAR PRODUCTO EN ALMACÉN</h3>
 <ul>
 <li>Faltaba asociarlo al genérico para poder darlo de alta en en los almacenes, se ha creado una incidencia a desarrollo para que lo haga de forma automática.</li>
+<br>
 <li>Pero al recepcionar pedido tienen problemas al no poder ubicarlo en el almacén.</li>
 <li>Asociar el genérico a mano en V3.</li>
+<br>
 <li>La relacion marca/almacen principal no está en la frw6000, es la propia fr7300, tiene que tener el fr73indalmacen=-1 y no tener fecfinvigalm</li>
+<br>
 <li>select fr73indalmacen, fr73fecfinvig_alm, a.rowid,  a.* from fr7300  a where fr73codnac = 728730</li>
 </ul>
 </div>
@@ -914,6 +972,7 @@
 <h3>Número mayor de filas</h3>
 <ul>
 <li>Borrar registros duplicados de potasio, creatinina, peso o talla.</li>
+<br>
 <li>select rowid, a.* from ad3800 a where ad01codasistenci in (select ad01codasistenci from ad0100 where ci22numhistoria='125703') order by 2 desc</li>
 </ul>
 </div>
@@ -921,16 +980,18 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Localidades/municipios/direcciones</h3>
 <ul>
-<li><strong>Dirección:</strong></li>
-<p>select * from ci1000 where ci21codpersona='21'</p>
-<p>select * from ci2200 where ci21codpersona='21'</p>
-<li><strong>Localidades:</strong></li>
-<p>select * from ci1600</p>
-<li><strong>Municipios:</strong></li>
-<p>select * from ci1700</p>
+<li>select * from ci1000 where ci21codpersona='21' ---dirección</li>
+<br>
+<li>select * from ci2200 where ci21codpersona='21' ---dirección</li>
+<br>
+<li>select * from ci1600 ---localidades</li>
+<br>
+<li>select * from ci1700 ---municipios</li>
+<br>
 <p>CI10INDDIRPRINC ---tiene que estar a -1 para dirección principal, antes no era obligatoria y ahora tiene que tener una</p>
-<li><strong>Cursor para updatear muchos registros con commit cada 1000 registros:</strong></li>
-<p>declare cursor c1 is select distinct ci21codpersona from ci1000;
+<br>
+<li>
+declare cursor c1 is select distinct ci21codpersona from ci1000;
 conta number :=0;
 begin
 for c in c1 loop
@@ -939,21 +1000,20 @@ conta := conta +1;
 if conta = 1000 then commit; end if;
 end loop;
 commit;
-end;</p>
+end; ---cursor para updatear muchos registros con commit cada 1000 registros</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Marcas & jerarquías</h3>
 <ul>
-<li><strong>Marcas asociadas a presentaciones:</strong></li>
-<p>select * from frp1300</p>
-<li><strong>Jerarquías:</strong></li>
-<p>select * from fch7000</p>
-<li><strong>Marca preferente dispensación:</strong></li>
-<p>select * from frp2300</p>
-<li><strong>Marca preferente compra:</strong></li>
-<p>select * from frp2500</p>
+<li>select * from frp1300 ---marcas asociadas a presentaciones</li>
+<br>
+<li>select * from fch7000 ---jerarquías</li>
+<br>
+<li>select * from frp2300 ---marca preferente dispensación</li>
+<br>
+<li>select * from frp2500 ---marca preferente compra</li>
 </ul>
 </div>
 
@@ -967,14 +1027,13 @@ end;</p>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Mensajería pendiente</h3>
 <ul>
-<li><strong>Revisar que se crean los eventos:</strong></li>
-<p>select * from int0200 where int02fecadd >sysdate -1 and int02procesado=0 order by int02fecadd desc</p>
-<li><strong>Revisar que se procesan los eventos:</strong></li>
-<p>select * from int0600 where int06estado='p'  and int06fecadd > sysdate -1 order by int06fecadd desc</p>
-<li><strong>Mensajeria encolada, si no hay registros actuales es que no está entrando la mensajeria:</strong></li>
-<p>select ad01fecadd from ad0100 order by ad01fecadd desc</p>
-<li><strong>Si hay mensajes encolados:</strong></li>
-<p>Reiniciar JBOSS</p>
+<li>select * from int0200 where int02fecadd >sysdate -1 and int02procesado=0 order by int02fecadd desc ---revisar que se crean los eventos:</li>
+<br>
+<li>select * from int0600 where int06estado='p'  and int06fecadd > sysdate -1 order by int06fecadd desc ---revisar que se procesan los eventos</li>
+<br>
+<li>select ad01fecadd from ad0100 order by ad01fecadd desc ---mensajeria encolada, si no hay registros actuales es que no está entrando la mensajería</li>
+<br>
+<li>Si hay mensajes encolados reiniciar JBOSS</li>
 </ul>
 </div>
 
@@ -988,12 +1047,11 @@ end;</p>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Movimientos & consumos</h3>
 <ul>
-<li><strong>Tipos de movimientos:</strong></li>
-<p>select * from fr9000</p>
-<li><strong>Movimientos almacén:</strong></li>
-<p>select * from fr8000</p>
-<li><strong>Consumos:</strong></li>
-<p>select * from fr6500</p>
+<li>select * from fr9000 ---tipos de movimientos</li>
+<br>
+<li>select * from fr8000 ---movimientos almacén</li>
+<br>
+<li>select * from fr6500 ---consumos</li>
 </ul>
 </div>
 
@@ -1001,7 +1059,9 @@ end;</p>
 <h3>Multidosis</h3>
 <ul>
 <li>frp10.frp10indmultidos</li>
+<br>
 <li>fr73.fr73indprn</li>
+<br>
 <li>sg25.fchmulti.sg2500</li>
 </ul>
 </div>
@@ -1017,8 +1077,11 @@ end;</p>
 <h3>No formulario en protocolos</h3>
 <ul>
 <li>Sacar de pet1000d el pet10idprotocol</li>
+<br>
 <li>Filtrar en pet1102j por pet10idprotocol y sacar pet16idsession</li>
+<br>
 <li>En la pet1200 filtar por pet16idsession</li>
+<br>
 <li>Cambiar pet12desproduct por la descripción que necesitamos y et12swtcteconcentr a valor 1</li>
 </ul>
 </div>
@@ -1054,6 +1117,7 @@ and c.pac01idpatient_int=h.pac01idpatient_int and est05idvalue_sp=192</li>
 <h3>Dispensaciones ya hechas de un paciente</h3>
 <ul>
 <li>select a.* from fru400 a, ad0100 b where a.ad01codasistenci = b.ad01codasistenci and ci22numhistoria = 93314</li>
+<br>
 <li>select * from fru700 where fru04codint = 305789</li>
 </ul>
 </div>
@@ -1077,6 +1141,7 @@ order by 1 desc</li>
 <h3>Peticiones botiquines departamento</h3>
 <ul>
 <li>select ad02desdpto from fr5500 a, ad0200 b where a.ad02coddpto=b.ad02coddpto and fr55fecadd>to_date('01/01/2021 00:00:00','dd/mm/yyyy hh24:mi:ss')</li>
+<br>
 <li>select distinct( b.sg02cod_add), c.sg02nom,c.sg02ape1,c.sg02ape2,d.sg01des from fr5500 b, sg0200 c, sg0100 d where b.sg02cod_add=c.sg02cod and d.sg01cod=c.sg01cod and b.fr55fecadd > to_date('01/01/2021 09:48:04', 'mm/dd/yyyy hh24:mi:ss') and b.fr55fecadd <sysdate order by 5</li>
 </ul>
 </div>
@@ -1093,8 +1158,9 @@ order by 1 desc</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Piano</h3>
 <ul>
-<li><strong>MÁXIMO CAMAS A MOSTRAR:</strong> select rowid, a.* from seg2500 a where seg25codparam = 'maxmultloc'</li>
-<li><strong>MÁXIMO NÚMERO DE UBICACIONES A MOSTRAR:</strong> select rowid, a.* from seg2500 a where seg25codparam = 'maxmultres'</li>
+<li>select rowid, a.* from seg2500 a where seg25codparam = 'maxmultloc' ---máximo camas a mostrar</li>
+<br>
+<li>select rowid, a.* from seg2500 a where seg25codparam = 'maxmultres' ---máximo número de ubicaciones a mostrar</li>
 </ul>
 </div>
 
@@ -1102,7 +1168,9 @@ order by 1 desc</li>
 <h3>Ping a cadena de conexión</h3>
 <ul>
 <li>tnsping 10.181.161.77:1522 100000 > c:\logsavac.txt</li>
+<br>
 <li>10000: veces que lo ejecuta</li>
+<br>
 <li>>: guarda log</li>
 </ul>
 </div>
@@ -1120,6 +1188,7 @@ order by 1 desc</li>
 <h3>PR en guía MC no</h3>
 <ul>
 <li>select * from frp2300 a where fr73codproducto not in (select fr73codproducto from fr8300 where fr82codguia=0) and frp10idpresentacion in (select frp10idpresentacion from fr8500 where fr82codguia=0)</li>
+<br>
 <li>select * from frp1000 where frp10idpresentacion in (5077,3130,2065)</li>
 </ul>
 </div>
@@ -1127,24 +1196,22 @@ order by 1 desc</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Precio envases</h3>
 <ul>
-<li><strong>PVL envase:</strong></li>
-<p>fch50labprice</p>
-<li><strong>PVP envase (iva inc.):</strong></li>
-<p>fch60packprice_sale</p>
-<li><strong>IVA:</strong></li>
-<p>fch31idvat</p>
+<li>fch50labprice ---pvl envase</li>
+<br>
+<li>fch60packprice_sale ---pvp envase (iva inc.)</li>
+<br>
+<li>fch31idvat ---iva</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Principio activo ATC</h3>
 <ul>
-<li><strong>Tablas:</strong></li>
-<p>frp2100, fch0600, fr7300_od</p>
-<li><strong>Relación producto/ppo:</strong></li>
-<p>fr6400, fch5100</p>
-<li><strong>Maestro:</strong></li>
-<p>fr6800, fch0500</p>
+<li>frp2100, fch0600, fr7300_od ---tablas</li>
+<br>
+<li>fr6400, fch5100 ---relación producto/ppo</li>
+<br>
+<li>fr6800, fch0500 ---maestro</li>
 </ul>
 </div>
 
@@ -1152,6 +1219,7 @@ order by 1 desc</li>
 <h3>Productos diluibles</h3>
 <ul>
 <li>select * from fch5000 where fch50desproduct like '%remifen%'</li>
+<br>
 <li>update fch5000 set fch50swtdilutable=1 where fch50idproduct=17129</li>
 </ul>
 </div>
@@ -1160,6 +1228,7 @@ order by 1 desc</li>
 <h3>Productos duplicados</h3>
 <ul>
 <li>Cuando salen productos duplicados en el buscador es porque tiene dos marcas preferentes para dispensación o compra, se debe dejar solo una.</li>
+<br>
 <li>select * from frp2300 where frp10idpresentacion=2213</li>
 </ul>
 </div>
@@ -1167,12 +1236,11 @@ order by 1 desc</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Productos incluidos en la MIV</h3>
 <ul>
-<li><strong>Localizas la MIV:</strong></li>
-<p>select * from fch5000 where fch50desproduct like 'ampicil%'</p>
-<li><strong>Dosificación por GC:</strong></li>
-<p>select * from fch6100 where fch50idproduct=23320</p>
-<li><strong>Productos contenidos en la MIV:</strong></li>
-<p>select * from fch7400 where fch61iddosage in (303653,303654)</p>
+<li>select * from fch5000 where fch50desproduct like 'ampicil%' ---localizas la MIV</li>
+<br>
+<li>select * from fch6100 where fch50idproduct=23320 ---dosificación por GC</li>
+<br>
+<li>select * from fch7400 where fch61iddosage in (303653,303654) ---productos contenidos en la MIV</li>
 </ul>
 </div>
 
@@ -1189,6 +1257,7 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Productos PRN no salgan en el carro</h3>
 <ul>
 <li>select * from sg2500 where codparam='prncarro'</li>
+<br>
 <li>select * from sg2500 where codparam like '%prn%'</li>
 </ul>
 </div>
@@ -1197,10 +1266,14 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Productos que están en BDCM y no en V3</h3>
 <ul>
 <li>Se puede dar el caso que el producto baje a bdcm pero no a v3, en ingb100 te dice los errores de los triggers MIRA/V3.</li>
+<br>
 <li>No sé porque ese producto se ha quedado sin código externo y entonces, luego no puede ponerle componentes como principios activos.</li>
 <li>El FR73CODPRODUCTO ES EL FCH50CODEXT</li>
+<br>
 <li>Para corregir estos casos cree un procedimiento en savac que se llama insertar_v3 y al que se le pasa el fch50idproduct y se encarga de hacer que el producto baje a v3. cuando ejecutes el inserta v3 en la casilla input pones el fch50idproduct.</li>
+<br>
 <li>select rowid, a.* from fch5000 a where fch50codext is null</li>
+<br>
 <li>select * from fr7300 where fr73codnac in ()</li>
 </ul>
 </div>
@@ -1209,6 +1282,7 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Productos sanitarios</h3>
 <ul>
 <li>select rowid, a.fr73indprodsan from fr7300 a where fr73codnac='492181'</li>
+<br>
 <li>En bdcm desmarcar el check "producto sanitario"</li>
 </ul>
 </div>
@@ -1224,8 +1298,11 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Protocolos</h3>
 <ul>
 <li>select * from pet1000d where pet10desprotocol like 'trauma%'</li>
+<br>
 <li>select * from pet1102j where pet10idprotocol=395</li>
+<br>
 <li>select * from pet1100 where pet11idline=2549</li>
+<br>
 <li><strong>Pautados:</strong> select * from pet4000</li>
 </ul>
 </div>
@@ -1234,6 +1311,7 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Recetario</h3>
 <ul>
 <li>select * from seg2500 where seg25codparam='recipenarc'</li>
+<br>
 <li>select * from seg2500 where seg25codparam='recipeec'</li>
 </ul>
 </div>
@@ -1241,8 +1319,9 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Refresco pantalla MIRA</h3>
 <ul>
-<li><strong>REFRESCO EN MINUTOS PANTALLA PRINCIPAL:</strong> select * from seg2500 where seg25codparam='mtodotimer'</li>
-<li><strong>REFRESCO EN MINUTOS DETALLE DEL PACIENTE:</strong> select * from seg2500 where seg25codparam='padettimer'</li>
+<li>select * from seg2500 where seg25codparam='mtodotimer' ---refresco en minutos pantalla principal</li>
+<br>
+<li>select * from seg2500 where seg25codparam='padettimer' ---refresco en minutos detalle del paciente</li>
 </ul>
 </div>
 
@@ -1250,6 +1329,7 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Ruta etiquetas V3</h3>
 <ul>
 <li>select * from sg2500 where descparam like '%etiq%'</li>
+<br>
 <li>select rowid, a.* from sg2500 a where codparam like 'impet%'</li>
 </ul>
 </div>
@@ -1257,11 +1337,12 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Actualizar precios BDCM WEB</h3>
 <ul>
-<li><strong>CENTROS:</strong></li>
-<p>Borrar los datos de la tabla actualiza_compras de todos los centros, cargar los datos del excel en la tabla actualiza_compras de un centro y después copiar esos datos a los demás, lanzar procedure actualiza_compras con partipo = centro y después con partipo = bdcm</p>
-<li><strong>CENTRALES:</strong></li>
-<p>Borrar los datos de la tabla actualiza_compras, cargar los datos del excel en la tabla actualiza_compras.</p>
+<li>Centros: Borrar los datos de la tabla actualiza_compras de todos los centros, cargar los datos del excel en la tabla actualiza_compras de un centro y después copiar esos datos a los demás, lanzar procedure actualiza_compras con partipo = centro y después con partipo = bdcm</li>
+<br>
+<li>Centrales: Borrar los datos de la tabla actualiza_compras, cargar los datos del excel en la tabla actualiza_compras.</li>
+<br>
 <li>Parar mensajería intgr - triggers - intgr_47 disable</li>
+<br>
 <li>Lanzar procedure actualiza_compras con partipo = bdcm</li>
 </ul>
 </div>
@@ -1269,20 +1350,19 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Alertas PM</h3>
 <ul>
-<li><strong>Alerta en la firma:</strong></li>
-<p>pet9000.pet90swtvisible</p>
-<li><strong>Alerta en la validación:</strong></li>
-<p>pet9000.pet90swtvisibleval</p>
-<li><strong>Alerta al administrar:</strong></li>
-<p>pet9000.pet90swtvisibleadm</p>
-<li><strong>Colores en las líneas de PM:</strong></li>
-<p>pet9400</p>
-<li><strong>Tipo de alerta, fin de pauta, producto:</strong></li>
-<p>pet9400.pet94wrntype</p>
-<li><strong>Alerta visible o no:</strong></li>
-<p>pet9400.pet94swtvisible</p>
-<li><strong>Alerta restrictiva, permite continuar o no:</strong></li>
-<p>pet9400.pet94swtcontinue</p>
+<li>pet9000.pet90swtvisible ---alerta en la firma</li>
+<br>
+<li>pet9000.pet90swtvisibleval ---alerta en la validación</li>
+<br>
+<li>pet9000.pet90swtvisibleadm ---alerta al administrar</li>
+<br>
+<li>pet9400 ---colores en las líneas de PM</li>
+<br>
+<li>pet9400.pet94wrntype ---tipo de alerta, fin de pauta, producto</li>
+<br>
+<li>pet9400.pet94swtvisible ---alerta visible o no</li>
+<br>
+<li>pet9400.pet94swtcontinue ---alerta restrictiva, permite continuar o no</li>
 </ul>
 </div>
 
@@ -1297,6 +1377,7 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <h3>Actualizar contraseña y grupo de usuario</h3>
 <ul>
 <li>update sg0200 set sg01cod='todo' where sg02cod='jdm83p'</li>
+<br>
 <li>update sg0200 set sg02passw='022avl95g8hpgh' where sg02cod='jdm83p'</li>
 </ul>
 </div>
@@ -1409,6 +1490,7 @@ order by frs35orden</li>
 <h3>Consultar dispensaciones paciente</h3>
 <ul>
 <li>select * from fru200 where ad01codasistenci in (select asistencia from correspondenciaproceso where historia=9017811)</li>
+<br>
 <li>select * from fru700 where fru04codint in (select fru04codint from fru400 where ad01codasistenci in (select asistencia from correspondenciaproceso where historia=9017811))</li>
 <li>select * from fr6600 where fr66codpeticion=xx</li>
 </ul>
@@ -1418,9 +1500,13 @@ order by frs35orden</li>
 <h3>MIRA 1.16.1</h3>
 <ul>
 <li>Autovalidación en BDCM</li>
+<br>
 <li>Autovalidación en MIRA</li>
+<br>
 <li>Prescripción de Enfermería BDCM</li>
+<br>
 <li>Prescripción de Enfermería MIRA</li>
+<br>
 <li>Prescripción de Enfermería MIRA Mobile</li>
 </ul>
 </div>
@@ -1428,12 +1514,11 @@ order by frs35orden</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Cuadrar pactos MIRA/V3</h3>
 <ul>
-<li><strong>Pactos MIRA:</strong></li>
-<p>select * from pet7000 where pet70swtactive = 1 and pet70codext not in (select  fr41codgrupprod codgroup from fr4100 where fri7codtipgrp=3)</p>
-<li><strong>Pactos V3:</strong></li>
-<p>select  fr41codgrupprod from fr4100 where fri7codtipgrp=3 and fr41codgrupprod not in (select pet70codext from pet7000)</p>
-<li><strong>Sincronizar pactos:</strong></li>
-<p>DECLARE 
+<li>select * from pet7000 where pet70swtactive = 1 and pet70codext not in (select  fr41codgrupprod codgroup from fr4100 where fri7codtipgrp=3) ---pactos mira</li>
+<br>
+<li>select  fr41codgrupprod from fr4100 where fri7codtipgrp=3 and fr41codgrupprod not in (select pet70codext from pet7000) ---pactos v3</li>
+<br>
+<li>DECLARE 
 pet70           number(9);
 org20           number(15);
 fch50           number(9);
@@ -1472,7 +1557,7 @@ end loop;
 commit;
 end loop;
 commit;
-end cargapactos;</p>
+end cargapactos; ---sincronizar pactos</li>
 </ul>
 </div>
 		
@@ -1528,12 +1613,11 @@ commit;</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Marcas preferentes de dispensación</h3>
 <ul>
-<li><strong>PR CON MÁS DE UNA MARCA PREFERENTE DE DISPENSACIÓN:</strong></li>
-<p>select a.frp10idpresentacion, FR04ENTIDAD,count(1) from frp2300 a group by a.frp10idpresentacion,FR04ENTIDAD having count(1)>1</p>
-<li><strong>BDCM:</strong></li>
-<p>Si la consulta de arriba nos devuelve algo ir a BDCM para ver cual es la MPD</p>
-<li><strong>ELIMINAR REGISTRO:</strong></li>
-<p>select * from frp2300</p>
+<li>select a.frp10idpresentacion, FR04ENTIDAD,count(1) from frp2300 a group by a.frp10idpresentacion,FR04ENTIDAD having count(1)>1 ---pr con más de una marca preferente de dispensación</li>
+<br>
+<li><strong>BDCM: Si la consulta de arriba nos devuelve algo ir a BDCM para ver cual es la MPD</li>
+<br>
+<li>select * from frp2300 ---eliminar registro</li>
 </ul>
 </div>
 
@@ -1541,7 +1625,9 @@ commit;</li>
 <h3>Usuarios genéricos</h3>
 <ul>
 <li>scm50h - Savac2022</li>
+<br>
 <li>jgb04x - 1Lunes00</li>
+<br>
 <li>aggc14h - 0Libanoz5</li>
 </ul>
 </div>
@@ -1563,20 +1649,6 @@ decode(m.fch50fdf, p.fch50fdf,'s','n') fracFor
 FROM FCH5000 m , FCH5000 p
 wHERE p.fch50idproduct = 48289
 and m.fch50idproduct = 25041</li>
-</ul>
-</div>
-
-<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3></h3>
-<ul>
-<li></li>
-</ul>
-</div>
-
-<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3></h3>
-<ul>
-<li></li>
 </ul>
 </div>
 
