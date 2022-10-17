@@ -400,7 +400,7 @@
 <br>
 <li>update ad0500 set ad05fecfinrespon='' where ad01codasistenci in (23418965) ---update ad0500 para abrir asistencia con fecha fin a null</li>
 <br>
-<li>select * from ad0800 a where ad01codasistenci in (2098792224) ---ad0800</strong></li>
+<li>select * from ad0800 a where ad01codasistenci in (2098792224) ---ad0800</li>
 <br>
 <li>update ad0800 set ad08fecfin='' where ad01codasistenci in (23418965) ---update ad0800 para abrir asistencia con fecha fin a null</li>
 <p></p>
@@ -699,12 +699,12 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Cola de impresión</h3>
 <ul>
-<li><strong>DETENER SERVICIO:</strong></li>
-<p>net stop spooler</p>
-<li><strong>BORRAR COLA DE IMPRESIÓN:</strong></li>
-<p>C:\WINDOWS\system32\spool\PRINTERS</p>
-<li><strong>ACTIVAR SERVICIO:</strong></li>
-<p>net start spooler</p>
+<li>Detener servicio: net stop spooler</li>
+<br>
+<li>Borrar cola de impresión: C:\WINDOWS\system32\spool\PRINTERS</li>
+<br>
+<li>Activar servicio: net start spooler</li>
+<br>
 </ul>
 </div>
 
@@ -1615,7 +1615,7 @@ commit;</li>
 <ul>
 <li>select a.frp10idpresentacion, FR04ENTIDAD,count(1) from frp2300 a group by a.frp10idpresentacion,FR04ENTIDAD having count(1)>1 ---pr con más de una marca preferente de dispensación</li>
 <br>
-<li><strong>BDCM: Si la consulta de arriba nos devuelve algo ir a BDCM para ver cual es la MPD</li>
+<li>BDCM: Si la consulta de arriba nos devuelve algo ir a BDCM para ver cual es la MPD</li>
 <br>
 <li>select * from frp2300 ---eliminar registro</li>
 </ul>
@@ -1653,9 +1653,82 @@ and m.fch50idproduct = 25041</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3></h3>
+<h3>Aporta paciente</h3>
 <ul>
-<li></li>
+<li>Los productos marcados como APORTA PACIENTE nunca salen en el carro, da igual como tenga el check NSC.</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Peticiones botiquines/pactos realizadas desde SAVAC</h3>
+<ul>
+<li>select 
+count(1), b.ad02desdpto, a.SG02COD_ADD
+from FR5500 a, ad0200 b
+where
+a.ad02coddpto=b.ad02coddpto
+and a.FR55FECPETICION > TO_DATE('01/07/2022 00:00:00', 'DD/MM/YYYY HH24:MI:SS')
+and a.SG02COD_ADD not like 'SAVAC-EC'
+and a.SG02COD_ADD not like 'SAVAC-IN'
+group by b.ad02desdpto, a.SG02COD_ADD</li>
+<br>
+<li>select * from sg0200 where SG02COD='EBG19M'</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Tomas administradas</h3>
+<ul>
+<li>select c.pac01mrn,b.PET53PLANDATE,PET53DOSEDES,DECODE(EST05IDVALUE_SMT,58,'ADMINISTRADO',57,'NO',59,'EN PAUSA',153,'SUSPENDIDA'),d.pet01idline,ORG06DESCLOCATION
+from pet5100 a,pet5301j b,pac0100 c,pet0100 d,adm1100 e,org0700 f,org0600 g,pet0200 h
+where  e.ADM11CODPROC_ASIST=f.ADM11CODPROC_ASIST
+and f.ORG06IDLOCATION=g.ORG06IDLOCATION
+and e.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
+and org06desclocation<>'ESPERA HOSP.'
+and org06desclocation<>'ESPERA URG.'
+and org06desclocation  like 'HG%'
+and a.PET51IDADMLINE=b.PET51IDADMLINE
+and b.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
+and a.pet01idline=d.pet01idline
+and pet53plandate>='04/10/2022'
+and pet53plandate <'05/10/2022'
+and h.pet01idline=a.pet01idline
+--and pac01mrn='128534'
+and h.fch50idproduct in
+(select fch50idproduct
+from fch5000
+where fch50idproduct<>-1
+and fch50codint not like 'Y-%')</li>
+<br>
+<li>select distinct c.pac01mrn,b.PET53PLANDATE,PET53DOSEDES,DECODE(EST05IDVALUE_SMT,58,'ADMINISTRADO',57,'NO',59,'EN PAUSA',153,'SUSPENDIDA'),d.pet01idline,ORG06DESCLOCATION
+from pet5100 a,pet5301j b,pac0100 c,pet0100 d,adm1100 e,org0700 f,org0600 g,pet0200 h
+where  e.ADM11CODPROC_ASIST=f.ADM11CODPROC_ASIST
+and f.ORG06IDLOCATION=g.ORG06IDLOCATION
+and e.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
+and org06desclocation<>'ESPERA HOSP.'
+and org06desclocation<>'ESPERA URG.'
+and org06desclocation  like 'HG%'
+and a.PET51IDADMLINE=b.PET51IDADMLINE
+and b.PAC01IDPATIENT_INT=c.PAC01IDPATIENT_INT
+and a.pet01idline=d.pet01idline
+and pet53plandate>='04/10/2022'
+and pet53plandate <'05/10/2022'
+and h.pet01idline=a.pet01idline
+--and pac01mrn='128534'
+and h.fch50idproduct in
+(select fch50idproduct
+from fch5000
+where fch50idproduct<>-1
+and fch50codint not like 'Y-%')
+and b.PET51SWTPRN=0
+--and pac01mrn=5213562 ---sin prn</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Credenciales hospitales</h3>
+<ul>
+<li>HPRA: a-savac - Madrid4267</li>
 </ul>
 </div>
 
