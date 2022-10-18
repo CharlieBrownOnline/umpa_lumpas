@@ -180,7 +180,11 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Movimientos NUTRIWIN</h3>
 <ul>
-<li>select fr80fecmovimiento,fr80fecadd from fr8000 where fr80observmov like '%nutri%' order by fr80fecadd desc</li>
+<li>SELECT *
+FROM FR1.FR8000
+WHERE
+FR80OBSERVMOV like '%NUTRI%'
+ORDER BY 5 DESC NULLS LAST</li>
 </ul>
 </div>
 
@@ -195,8 +199,11 @@
 <h3>Llamada SELENE</h3>
 <ul>
 <li>http://10.181.27.228/mira/?nonav=true&corresp=1&timestamp=20200615140000&segfunproc=164&patientid=563566&processid=5827545&assistanceid=16639838</li>
+<br>
 <li>patientid=nhc</li>
+<br>
 <li>processid=proceso</li>
+<br>
 <li>assistanceid=asistencia</li>
 </ul>
 </div>
@@ -224,9 +231,9 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Relación carro KARDEX</h3>
 <ul>
-<li><strong>Relación carro/departamento:</strong> select * from intgr.fr0700 where fr07descarro like 'hg-hdmq%'</li>
+<li>select * from intgr.fr0700 where fr07descarro like 'hg-hdmq%' ---relación carro/departamento</li>
 <br>
-<li><strong>Código del carro y kardex al que va:</strong> select rowid, a.* from intgr.ar_carro a where fr07codcarro=46</li>
+<li>select rowid, a.* from intgr.ar_carro a where fr07codcarro=46 ---código del carro y kardex al que va</li>
 </ul>
 </div>
 
@@ -360,7 +367,7 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Bloqueo PM SAVAC</h3>
 <ul>
-<li><strong>Eliminamos todos los registros:</strong> select * from frl800</li>
+<li>select * from frl800 ---eliminar todos los registros</li>
 </ul>
 </div>
 
@@ -640,7 +647,7 @@
 <br>
 <li>select * from fr9200 ---maestra deducciones</li>
 <br>
-<li><strong>FR7300:</strong> el cod de deducciones viene en el campo FR92CODIGO</li>
+<li>FR7300el cod de deducciones viene en el campo FR92CODIGO</li>
 </ul>
 </div>
 
@@ -934,7 +941,7 @@
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>UBICAR PRODUCTO EN ALMACÉN</h3>
+<h3>Ubicar producto en almacén</h3>
 <ul>
 <li>Faltaba asociarlo al genérico para poder darlo de alta en en los almacenes, se ha creado una incidencia a desarrollo para que lo haga de forma automática.</li>
 <br>
@@ -988,7 +995,7 @@
 <br>
 <li>select * from ci1700 ---municipios</li>
 <br>
-<p>CI10INDDIRPRINC ---tiene que estar a -1 para dirección principal, antes no era obligatoria y ahora tiene que tener una</p>
+<li>CI10INDDIRPRINC ---tiene que estar a -1 para dirección principal, antes no era obligatoria y ahora tiene que tener una</li>
 <br>
 <li>
 declare cursor c1 is select distinct ci21codpersona from ci1000;
@@ -1150,6 +1157,7 @@ order by 1 desc</li>
 <h3>Peticiones enviadas al KARDEX</h3>
 <ul>
 <li>c:\sap\entrada\kdxrecibidos</li>
+<br>
 <li>|74|obs-b.29|o|p-346587|plavix 75 mg 50 comprimidos cubierta pel|1|21-06-22 00:39:10|garcia|gonzalez|salvador||control de observacion b de urgenc|908720p||0 ⇒ si el mensaje viene a 0 es que desde el kdx han cancelado la petición de forma manual.
 |96|scm-04|o|122614|apidra 100ui/ml 1 vial 10ml solucion inyectable|1|21-06-21 20:07:11|martinez|coronado|diego||sala de cuidados medios|908684p||1 ⇒ unidades dispensadas</li>
 </ul>
@@ -1303,7 +1311,7 @@ order by c.fru4fecadd desc, b.fru7codinterno, b.fr28desproducto,  c.ad01codasist
 <br>
 <li>select * from pet1100 where pet11idline=2549</li>
 <br>
-<li><strong>Pautados:</strong> select * from pet4000</li>
+<li>select * from pet4000 ---pautados</li>
 </ul>
 </div>
 
@@ -1492,6 +1500,7 @@ order by frs35orden</li>
 <li>select * from fru200 where ad01codasistenci in (select asistencia from correspondenciaproceso where historia=9017811)</li>
 <br>
 <li>select * from fru700 where fru04codint in (select fru04codint from fru400 where ad01codasistenci in (select asistencia from correspondenciaproceso where historia=9017811))</li>
+<br>
 <li>select * from fr6600 where fr66codpeticion=xx</li>
 </ul>
 </div>
@@ -1728,7 +1737,55 @@ and b.PET51SWTPRN=0
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Credenciales hospitales</h3>
 <ul>
-<li>HPRA: a-savac - Madrid4267</li>
+<li>HPRA: a-savac - Madrid4267 y usuario(vnc)</li>
+<br>
+<li>HMM: soportesavac - ozaraen.Q1 y a6soporte - SoporteNivel1</li>
+<br>
+<li>HGURS: hgurs-savac - Cavas018</li>
+<br>
+<li>HULAMM: Garza.0(vnc)</li>
+<br>
+<li>HVLG: AD/a9-tecext - Hospital0 y hvlg\savac - savac2017
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Inactividad SAVAC</h3>
+<ul>
+<li>select rowid, a.* from sg2500 a where CODPARAM like '%BDTMPDESC%' ---valor en minutos</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Etiquetas urgentes</h3>
+<ul>
+<li>^CI28
+^CF0,25
+^FO0,30^GB10000,2,2^FS
+^FO300,40^FDPETICIÓN URGENTE^FS
+^FO0,60^GB10000,2,2^FS
+^FO30,80^FDNHC:^FS
+^FO160,80^FD<NHISTORIA>^FS
+^FO30,120^FDPACIENTE:^FS
+^FO160,120^FD<PACIENTE>^FS
+^FO30,160^FDUBICACIÓN:^FS
+^FO160,160^FD<UENFERMERIA>^FS
+^FO30,200^FDCAMA:^FS
+^FO160,200^FD<CAMA>^FS
+^FO30,240^FDPRODUCTO:^FS
+^FO160,240^FD<PRODUCTO>^FS
+^FO30,280^FDCANTIDAD:^FS
+^FO160,280^FD<CANTIDAD>^FS
+^FO30,320^FDFECHA:^FS
+^FO160,320^FD<FECHAHORA>^FS
+^FO0,360^GB10000,2,2^FS</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Inactividad MIRA/MOBILE/BDCM</h3>
+<ul>
+<li>select rowid, a.* from seg2500 a where SEG25CODPARAM in ('OFFTIME','OFFTIMEM') ---valor en minutos</li>
 </ul>
 </div>
 
