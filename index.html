@@ -1637,7 +1637,7 @@ commit;</li>
 <br>
 <li>jgb04x - 1Lunes00</li>
 <br>
-<li>aggc14h - 0Libanoz5</li>
+<li>agc14h - 0Libanoz5</li>
 </ul>
 </div>
 
@@ -1786,6 +1786,34 @@ and b.PET51SWTPRN=0
 <h3>Inactividad MIRA/MOBILE/BDCM</h3>
 <ul>
 <li>select rowid, a.* from seg2500 a where SEG25CODPARAM in ('OFFTIME','OFFTIMEM') ---valor en minutos</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Proceso/asistencia a partir del NHC</h3>
+<ul>
+<li>select ci21codpersona, a.ad01codasistenci, c.ad02coddpto, ad01fecinicio, a.ad07codproceso--, a.*
+from ad1500 a, ad0100 b, ad0500 c
+where a.ad01codasistenci=b.ad01codasistenci
+and ci22numhistoria=33900
+and b.ad01codasistenci=c.ad01codasistenci</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
+<h3>Episodio activo no PR04C</h3>
+<ul>
+<li>SET DEFINE OFF;
+Insert into PR.PR0400
+(PR04NUMACTPLAN, AD01CODASISTENCI, PR01CODACTUACION, AD02CODDPTO, CI21CODPERSONA, 
+CI32CODTIPECON, CI13CODENTIDAD, PR37CODESTADO, PR03NUMACTPEDI, PR04FECPLANIFIC, 
+PR04FECINIACT, PR04FECFINACT, SG02COD_ADD, PR04FECADD, AD07CODPROCESO, 
+PR04INDREQDOC, CI21CODPERSONA_REC, AD63CODPROPAC, FRB1CODHOSPITAL, PR04INDDIAGNOSTIC)
+Values
+(PR04NUMACTPLAN_SEQUENCE.NEXTVAL, 25203944, 8505, 61, 52105, 
+'S', '0', 3, 19392772, TO_DATE('25/01/2023 9:30:00', 'DD/MM/YYYY HH24:MI:SS'), 
+TO_DATE('25/01/2023 9:30:00', 'DD/MM/YYYY HH24:MI:SS'), TO_DATE('25/01/2023 9:30:00', 'DD/MM/YYYY HH24:MI:SS'), 'SAVAC-IN', TO_DATE('26/09/2022 13:30:31', 'DD/MM/YYYY HH24:MI:SS'), 14367648, 0, -100, 1, 1003, 0);
+COMMIT;</li>
 </ul>
 </div>
 
