@@ -16,21 +16,21 @@
 <ul data-role="listview" data-filter="true" data-filter-placeholder="Busca y encontrarás..." data-inset="true">	
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>doctor_peticiones_servicio</h3>
+<h3>DOCTOR PETICIONES SERVICIO</h3>
 <ul>
 <li>select * from seg2500 where seg25codparam='signdr_srq'</li>
 </ul>
 </div>
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Dosificaciones con fijar volumen</h3>
+<h3>DOSIFICACIONES FIJAR VOLUMEN</h3>
 <ul>
 <li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61swtcteconc = 0</li>
 </ul>
 </div>
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Dosificaciones vacías</h3>
+<h3>DOSIFICACIONES VACIAS</h3>
 <ul>
 <li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61dose is null</li>
 </ul>
