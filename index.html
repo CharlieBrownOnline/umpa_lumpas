@@ -18,28 +18,28 @@
 <ul data-role="listview" data-filter="true" data-filter-placeholder="Busca y encontrarás..." data-inset="true">	
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Doctor peticiones servicio</h3>
+<h3>DOCTOR PETICIONES SERVICIO</h3>
 <ul>
 <li>select * from seg2500 where seg25codparam='signdr_srq'</li>
 </ul>
 </div>
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Dosificaciones fijar volumen</h3>
+<h3>DOSIFICACIONES FIJAR VOLUMEN</h3>
 <ul>
 <li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61swtcteconc = 0</li>
 </ul>
 </div>
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Dosificaciones vacías</h3>
+<h3>DOSIFICACIONES VACÍAS</h3>
 <ul>
 <li>select b.fch50codint, b.fch50desproduct, a.fch61dose from fch.fch6100 a, fch5000 b where a.fch50idproduct=b.fch50idproduct and a.est01codcenter in(3) and a.fch61dose is null</li>
 </ul>
 </div>
 	
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Dosis en la administración</h3>
+<h3>DOSIS EN LA ADMINISTRACIÓN</h3>
 <ul>
 <li>select * from seg2500 where seg25codparam like 'mpnodosis%'</li>
 </ul>
@@ -110,19 +110,19 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Tipos de mensajes KARDEX</h3>
 <ul>
-<li>AC: Unidosis</li>
-<li>PBP: Petición paciente</li>
-<li>PBS: Petición a servicio</li>
-<li>PBU: Petición urgente</li>
-<li>PY: Reposición de PYXIS</li>
-<li>CC: Reposición de doble cajón</li>
-<li>MA: Movimiento manual</li>
-<li>RE: Reposición de KARDEX</li>
-<li>DC: Devolución de carro</li>
-<li>CA: Cargo/abono</li>
-<li>IN: Inventario</li>
-<li>DA: Dispensación ambulante</li>
-<li>DD: Devolución ambulante</li>
+<li><strong>AC:</strong> Unidosis</li>
+<li><strong>PBP:</strong> Petición paciente</li>
+<li><strong>PBS:</strong> Petición a servicio</li>
+<li><strong>PBU:</strong> Petición urgente</li>
+<li><strong>PY:</strong> Reposición de PYXIS</li>
+<li><strong>CC:</strong> Reposición de doble cajón</li>
+<li><strong>MA:</strong> Movimiento manual</li>
+<li><strong>RE:</strong> Reposición de KARDEX</li>
+<li><strong>DC:</strong> Devolución de carro</li>
+<li><strong>CA:</strong> Cargo/abono</li>
+<li><strong>IN:</strong> Inventario</li>
+<li><strong>DA:</strong> Dispensación ambulante</li>
+<li><strong>DD:</strong> Devolución ambulante</li>
 </ul>
 </div>
 	
@@ -183,11 +183,7 @@
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Movimientos NUTRIWIN</h3>
 <ul>
-<li>SELECT *
-FROM FR1.FR8000
-WHERE
-FR80OBSERVMOV like '%NUTRI%'
-ORDER BY 5 DESC NULLS LAST</li>
+<li>SELECT * FROM FR1.FR8000 WHERE FR80OBSERVMOV like '%NUTRI%' ORDER BY 5 DESC NULLS LAST</li>
 </ul>
 </div>
 
@@ -203,11 +199,11 @@ ORDER BY 5 DESC NULLS LAST</li>
 <ul>
 <li>http://10.181.27.228/mira/?nonav=true&corresp=1&timestamp=20200615140000&segfunproc=164&patientid=563566&processid=5827545&assistanceid=16639838</li>
 <br>
-<li>patientid=nhc</li>
+<li><strong>NHC:</strong>patientid=nhc</li>
 <br>
-<li>processid=proceso</li>
+<li><strong>PROCESO:</strong>processid=proceso</li>
 <br>
-<li>assistanceid=asistencia</li>
+<li><strong>ASISTENCIA:</strong>assistanceid=asistencia</li>
 </ul>
 </div>
 
@@ -243,11 +239,7 @@ ORDER BY 5 DESC NULLS LAST</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Teléfono oficina</h3>
 <ul>
-<li>General: 968 92 84 70</li>
-<br>
-<li>Sole: 662 637 442</li>
-<br>
-<li>JL: 662 637 454</li>
+<li><strong>General:</strong> 968 92 84 70</li>
 </ul>
 </div>
 
@@ -709,11 +701,11 @@ ORDER BY 5 DESC NULLS LAST</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Cola de impresión</h3>
 <ul>
-<li>Detener servicio: net stop spooler</li>
+<li><strong>DETENER SERVICIO:</strong> net stop spooler</li>
 <br>
-<li>Borrar cola de impresión: C:\WINDOWS\system32\spool\PRINTERS</li>
+<li><strong>BORRAR COLA DE IMPRESIÓN:</strong> C:\WINDOWS\system32\spool\PRINTERS</li>
 <br>
-<li>Activar servicio: net start spooler</li>
+<li><strong>ACTIVAR SERVICIO:</strong> net start spooler</li>
 <br>
 </ul>
 </div>
@@ -742,13 +734,6 @@ ORDER BY 5 DESC NULLS LAST</li>
 <h3>Carro cama</h3>
 <ul>
 <li>select * from fr3300 where AD15CODCAMA='BP-107'</li>
-</ul>
-</div>
-
-<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Cambiar hora carros</h3>
-<ul>
-<li>Mantenimiento carros >>> Programación carro</li>
 </ul>
 </div>
 
@@ -988,34 +973,18 @@ ORDER BY 5 DESC NULLS LAST</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Localidades/municipios/direcciones</h3>
+<h3>LOCALIDADES/MUNICIPIOS/DIRECCIONES</h3>
 <ul>
-<li>select * from ci1000 where ci21codpersona='21' ---dirección</li>
-<br>
-<li>select * from ci2200 where ci21codpersona='21' ---dirección</li>
-<br>
-<li>select * from ci1600 ---localidades</li>
-<br>
-<li>select * from ci1700 ---municipios</li>
-<br>
-<li>CI10INDDIRPRINC ---tiene que estar a -1 para dirección principal, antes no era obligatoria y ahora tiene que tener una</li>
-<br>
-<li>
-declare cursor c1 is select distinct ci21codpersona from ci1000;
-conta number :=0;
-begin
-for c in c1 loop
-update ci1000 set CI10INDDIRPRINC=-1 where CI10INDDIRPRINC is null and ci21codpersona=c.ci21codpersona;
-conta := conta +1;
-if conta = 1000 then commit; end if;
-end loop;
-commit;
-end; ---cursor para updatear muchos registros con commit cada 1000 registros</li>
+<li><strong>DIRECCIÓN:</strong> select * from ci1000 where ci21codpersona='21'</li>
+<li><strong>DIRECCIÓN:</strong> select * from ci2200 where ci21codpersona='21'</li>
+<li><strong>LOCALIDADES:</strong> select * from ci1600</li>
+<li><strong>MUNICIPIOS:</strong> select * from ci1700</li>
+<li><strong>CI10INDDIRPRINC:</strong> Tiene que estar a -1 para dirección principal, antes no era obligatoria y ahora tiene que tener una</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Marcas & jerarquías</h3>
+<h3>MARCAS & JERARQUÍAS</h3>
 <ul>
 <li>select * from frp1300 ---marcas asociadas a presentaciones</li>
 <br>
@@ -1028,40 +997,35 @@ end; ---cursor para updatear muchos registros con commit cada 1000 registros</li
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Mensajería contraseña</h3>
+<h3>MENSAJERÍA CONTRASEÑA</h3>
 <ul>
 <li>S4v4c.20!6</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Mensajería pendiente</h3>
+<h3>MENSAJERÍA PENDIENTE</h3>
 <ul>
-<li>select * from int0200 where int02fecadd >sysdate -1 and int02procesado=0 order by int02fecadd desc ---revisar que se crean los eventos:</li>
-<br>
-<li>select * from int0600 where int06estado='p'  and int06fecadd > sysdate -1 order by int06fecadd desc ---revisar que se procesan los eventos</li>
-<br>
-<li>select ad01fecadd from ad0100 order by ad01fecadd desc ---mensajeria encolada, si no hay registros actuales es que no está entrando la mensajería</li>
-<br>
+<li><strong>REVISAR QUE SE CREAN LOS EVENTOS:</strong> select * from int0200 where int02fecadd >sysdate -1 and int02procesado=0 order by int02fecadd desc</li>
+<li><strong>REVISAR QUE SE PROCESAN LOS EVENTOS:</strong> select * from int0600 where int06estado='p'  and int06fecadd > sysdate -1 order by int06fecadd desc</li>
+<li><strong>MENSAJERIA ENCOLADA, SI NO HAY REGISTROS ACTUALES ES QUE NO ESTÁ ENTRANDO LA MENSAJERÍA:</strong> select ad01fecadd from ad0100 order by ad01fecadd desc</li>
 <li>Si hay mensajes encolados reiniciar JBOSS</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Mensajes enviados MIRA</h3>
+<h3>MENSAJES ENVIADOS MIRA</h3>
 <ul>
 <li>select * from pet2500</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Movimientos & consumos</h3>
+<h3>MOVIMIENTOS & CONSUMOS</h3>
 <ul>
-<li>select * from fr9000 ---tipos de movimientos</li>
-<br>
-<li>select * from fr8000 ---movimientos almacén</li>
-<br>
-<li>select * from fr6500 ---consumos</li>
+<li><strong>TIPOS DE MOVIMIENTOS:</strong> select * from fr9000</li>
+<li><strong>MOVIMIENTOS ALMACÉN:</strong> select * from fr8000</li>
+<li><strong>CONSUMOS:</strong> select * from fr6500</li>
 </ul>
 </div>
 
@@ -1507,21 +1471,6 @@ order by frs35orden</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MIRA 1.16.1</h3>
-<ul>
-<li>Autovalidación en BDCM</li>
-<br>
-<li>Autovalidación en MIRA</li>
-<br>
-<li>Prescripción de Enfermería BDCM</li>
-<br>
-<li>Prescripción de Enfermería MIRA</li>
-<br>
-<li>Prescripción de Enfermería MIRA Mobile</li>
-</ul>
-</div>
-
-<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>Cuadrar pactos MIRA/V3</h3>
 <ul>
 <li>select * from pet7000 where pet70swtactive = 1 and pet70codext not in (select  fr41codgrupprod codgroup from fr4100 where fri7codtipgrp=3) ---pactos mira</li>
@@ -1572,21 +1521,21 @@ end cargapactos; ---sincronizar pactos</li>
 </div>
 		
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Desbloquear PM en V3</h3>
+<h3>DESBLOQUEAR PM EN V3</h3>
 <ul>
 <li>select rowid, a.* from frl800 a</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Descripción proveedor</h3>
+<h3>DESCRIPCIÓN PROVEEDOR</h3>
 <ul>
 <li>select * from frm0200 where frm02refproveedor='xxx'</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Dosis máxima por principio activo</h3>
+<h3>DOSIS MÁXIMA POR PRINCIPIO ACTIVO</h3>
 <ul>
 <li>select  d.fch05desap,fch30descligroup,a.fch76dose,fch04desum,e.est05desvalue,f.est05desvalue,a.fch76days
 from fch.fch7600 a,fch0400d b,fch3000d c,fch0500d d,est0500d e,est0500d f
@@ -1601,7 +1550,7 @@ order by d.fch05desap,a.fch30idcligroup</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Disociar datos</h3>
+<h3>DISOCIAR DATOS</h3>
 <ul>
 <li>update pac.pac0100 set pac01name = 'name - ' || pac01mrn,  pac01lastname1 = 'lastname1 - ' || pac01mrn ,
 pac01lastname2 = 'lastname2 - ' || pac01mrn, pac01idnumber = null, pac01cip= null, pac01ssnnum= null;
@@ -1614,36 +1563,34 @@ commit;</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Duplicados peso, talla, creatininia y potasio</h3>
+<h3>DUPLICADOS PESO, TALLA, CREATININIA Y POTASIO</h3>
 <ul>
 <li>select ad01codasistenci, ad38creatinina, ad38superfcorp, ad38potasio, ad38peso, ad38altura, ad38fecinicio, count(ad38fecadd) from ad3800 group by ad01codasistenci, ad38creatinina, ad38superfcorp, ad38potasio, ad38peso, ad38altura, ad38fecinicio having count (ad38fecadd) > 2</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Marcas preferentes de dispensación</h3>
+<h3>MARCAS PREFERENTES DE DISPENSACIÓN</h3>
 <ul>
-<li>select a.frp10idpresentacion, FR04ENTIDAD,count(1) from frp2300 a group by a.frp10idpresentacion,FR04ENTIDAD having count(1)>1 ---pr con más de una marca preferente de dispensación</li>
+<li><strong>PR CON MÁS DE UNA MARCA PREFERENTE DE DISPENSACIÓN:</strong> select a.frp10idpresentacion, FR04ENTIDAD,count(1) from frp2300 a group by a.frp10idpresentacion,FR04ENTIDAD having count(1)>1</li>
 <br>
-<li>BDCM: Si la consulta de arriba nos devuelve algo ir a BDCM para ver cual es la MPD</li>
+<li><strong>BDCM:</strong> Si la consulta de arriba nos devuelve algo ir a BDCM para ver cual es la MPD</li>
 <br>
-<li>select * from frp2300 ---eliminar registro</li>
+<li><strong>ELIMINAR REGISTRO:</strong> select * from frp2300</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Usuarios genéricos</h3>
+<h3>USUARIOS GENÉRICOS</h3>
 <ul>
 <li>scm50h - Savac2022</li>
-<br>
 <li>jgb04x - 1Lunes00</li>
-<br>
 <li>agc14h - 0Libanoz5</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Comparación jerarquía marca y presentación</h3>
+<h3>COMPARACIÓN JERARQUÍA MARCA Y PRESENTACIÓN</h3>
 <ul>
 <li>select distinct m.fch50idproduct, m.fch50desproduct, m.fch50codint, m.fch50codnat, p.fch50desproduct, p.fch50codint,
 decode(m.fch02iddf,p.fch02iddf,'s','n') FF,
@@ -1663,14 +1610,14 @@ and m.fch50idproduct = 25041</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Aporta paciente</h3>
+<h3>APORTA PACIENTE</h3>
 <ul>
 <li>Los productos marcados como APORTA PACIENTE nunca salen en el carro, da igual como tenga el check NSC.</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Peticiones botiquines/pactos realizadas desde SAVAC</h3>
+<h3>PETICIONES BOTIQUINES/PACTOS REALIZADAS DESDE SAVAC</h3>
 <ul>
 <li>select 
 count(1), b.ad02desdpto, a.SG02COD_ADD
@@ -1687,7 +1634,7 @@ group by b.ad02desdpto, a.SG02COD_ADD</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Tomas administradas</h3>
+<h3>TOMAS ADMINISTRADAS</h3>
 <ul>
 <li>select c.pac01mrn,b.PET53PLANDATE,PET53DOSEDES,DECODE(EST05IDVALUE_SMT,58,'ADMINISTRADO',57,'NO',59,'EN PAUSA',153,'SUSPENDIDA'),d.pet01idline,ORG06DESCLOCATION
 from pet5100 a,pet5301j b,pac0100 c,pet0100 d,adm1100 e,org0700 f,org0600 g,pet0200 h
@@ -1736,29 +1683,25 @@ and b.PET51SWTPRN=0
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Credenciales hospitales</h3>
+<h3>CREDENCIALES HOSPITALES</h3>
 <ul>
-<li>HPRA: a-savac - Madrid4267 y usuario(vnc)</li>
-<br>
-<li>HMM: soportesavac - ozaraen.Q1 y a6soporte - SoporteNivel1</li>
-<br>
-<li>HGURS: hgurs-savac - Cavas018</li>
-<br>
-<li>HULAMM: Garza.0(vnc)</li>
-<br>
-<li>HVLG: AD/a9-tecext - Hospital0 y hvlg\savac - savac2017
+<li><strong>HPRA:</strong> a-savac - Madrid4267 y usuario</li>
+<li><strong>HMM:</strong> soportesavac - ozaraen.Q1 y a6soporte - SoporteNivel1</li>
+<li><strong>HGURS:</strong> hgurs-savac - Cavas018 y hgurs-instala - Savac2022 y </li>
+<li><strong>HULAMM:</strong> Garza.0</li>
+<li><strong>HVLG:</strong> AD/a9-tecext - Hospital0 y hvlg\savac - savac2017 y temporal1</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Inactividad SAVAC</h3>
+<h3>INACTIVIDAD SAVAC</h3>
 <ul>
 <li>select rowid, a.* from sg2500 a where CODPARAM like '%BDTMPDESC%' ---valor en minutos</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Etiquetas urgentes</h3>
+<h3>ETIQUETAS URGENTES</h3>
 <ul>
 <li>^CI28
 ^CF0,25
@@ -1784,14 +1727,14 @@ and b.PET51SWTPRN=0
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Inactividad MIRA/MOBILE/BDCM</h3>
+<h3>INACTIVIDAD MIRA/MOBILE/BDCM</h3>
 <ul>
 <li>select rowid, a.* from seg2500 a where SEG25CODPARAM in ('OFFTIME','OFFTIMEM') ---valor en minutos</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Proceso/asistencia a partir del NHC</h3>
+<h3>PROCESO/ASISTENCIA A PARTIR DEL NHC</h3>
 <ul>
 <li>select ci21codpersona, a.ad01codasistenci, c.ad02coddpto, ad01fecinicio, a.ad07codproceso--, a.*
 from ad1500 a, ad0100 b, ad0500 c
@@ -1802,7 +1745,7 @@ and b.ad01codasistenci=c.ad01codasistenci</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>Episodio activo no PR04C</h3>
+<h3>EPISODIO ACTIVO NO PR04C</h3>
 <ul>
 <li>SET DEFINE OFF;
 Insert into PR.PR0400
@@ -1821,16 +1764,17 @@ COMMIT;</li>
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
 <h3>ODBC</h3>
 <ul>
-<li>HRM: scanhmm01.sms.carm.es - 1521 - FARMATEMP</li>
-<li>HULAMM: scanhla01.sms.carm.es - 1521 - ODBC</li>
-<li>HVC: scanhvc01.sms.carm.es - 1521 - ODBC</li>
-<li>HCN: scanhcn01.sms.carm.es - 1521 - ODBC</li>
-<li>HVLG: scanhvlg01.sms.carm.es - 1521 - ODBC</li>
-<li>HCUVA: scanhva05.sms.carm.es - 1521 - ODBC</li>
-<li>HMM: scanhmm01.sms.carm.es - 1521 - ODBC</li>
-<li>HPRA: scanhsl02.sms.carm.es - 1521 - ODBC</li>
-<li>HGURS: scanhrs01.sms.carm.es - 1521 - ODBC</li>
-<li>CHC: scanhsl06.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HRM:</strong> scanhmm01.sms.carm.es - 1521 - FARMATEMP</li>
+<li><strong>HULAMM:</strong> scanhla01.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HVC:</strong> scanhvc01.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HCN:</strong> scanhcn01.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HVLG:</strong> scanhvlg01.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HCUVA:</strong> scanhva05.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HMM:</strong> scanhmm01.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HPRA:</strong> scanhsl02.sms.carm.es - 1521 - ODBC</li>
+<li><strong>HGURS:</strong> scanhrs01.sms.carm.es - 1521 - ODBC</li>
+<li><strong>CHC:</strong> scanhsl06.sms.carm.es - 1521 - ODBC</li>
+<li><strong>BDCM:</strong> scanhva01.sms.carm.es - 1521 - MEDI</li>
 </ul>
 </div>
 
@@ -1840,12 +1784,3 @@ COMMIT;</li>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
