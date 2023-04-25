@@ -973,7 +973,7 @@
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>LOCALIDADES/MUNICIPIOS/DIRECCIONES</h3>
+<h3>Localidades/municipios/direcciones</h3>
 <ul>
 <li><strong>DIRECCIÓN:</strong> select * from ci1000 where ci21codpersona='21'</li>
 <li><strong>DIRECCIÓN:</strong> select * from ci2200 where ci21codpersona='21'</li>
@@ -984,7 +984,7 @@
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MARCAS & JERARQUÍAS</h3>
+<h3>Marcas & jerarquías</h3>
 <ul>
 <li>select * from frp1300 ---marcas asociadas a presentaciones</li>
 <br>
@@ -997,14 +997,14 @@
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MENSAJERÍA CONTRASEÑA</h3>
+<h3>Mensajería contraseña</h3>
 <ul>
 <li>S4v4c.20!6</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MENSAJERÍA PENDIENTE</h3>
+<h3>Mensajería pendiente</h3>
 <ul>
 <li><strong>REVISAR QUE SE CREAN LOS EVENTOS:</strong> select * from int0200 where int02fecadd >sysdate -1 and int02procesado=0 order by int02fecadd desc</li>
 <li><strong>REVISAR QUE SE PROCESAN LOS EVENTOS:</strong> select * from int0600 where int06estado='p'  and int06fecadd > sysdate -1 order by int06fecadd desc</li>
@@ -1014,14 +1014,14 @@
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MENSAJES ENVIADOS MIRA</h3>
+<h3>Mensajes enviados mira</h3>
 <ul>
 <li>select * from pet2500</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MOVIMIENTOS & CONSUMOS</h3>
+<h3>Movimientos & consumos</h3>
 <ul>
 <li><strong>TIPOS DE MOVIMIENTOS:</strong> select * from fr9000</li>
 <li><strong>MOVIMIENTOS ALMACÉN:</strong> select * from fr8000</li>
@@ -1521,21 +1521,21 @@ end cargapactos; ---sincronizar pactos</li>
 </div>
 		
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>DESBLOQUEAR PM EN V3</h3>
+<h3>Desbloquear pm en v3</h3>
 <ul>
 <li>select rowid, a.* from frl800 a</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>DESCRIPCIÓN PROVEEDOR</h3>
+<h3>Descripción proveedor</h3>
 <ul>
 <li>select * from frm0200 where frm02refproveedor='xxx'</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>DOSIS MÁXIMA POR PRINCIPIO ACTIVO</h3>
+<h3>Dosis máxima por principio activo</h3>
 <ul>
 <li>select  d.fch05desap,fch30descligroup,a.fch76dose,fch04desum,e.est05desvalue,f.est05desvalue,a.fch76days
 from fch.fch7600 a,fch0400d b,fch3000d c,fch0500d d,est0500d e,est0500d f
@@ -1550,7 +1550,7 @@ order by d.fch05desap,a.fch30idcligroup</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>DISOCIAR DATOS</h3>
+<h3>Disociar datos</h3>
 <ul>
 <li>update pac.pac0100 set pac01name = 'name - ' || pac01mrn,  pac01lastname1 = 'lastname1 - ' || pac01mrn ,
 pac01lastname2 = 'lastname2 - ' || pac01mrn, pac01idnumber = null, pac01cip= null, pac01ssnnum= null;
@@ -1563,14 +1563,14 @@ commit;</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>DUPLICADOS PESO, TALLA, CREATININIA Y POTASIO</h3>
+<h3>Duplicados peso, talla, creatininia y potasio</h3>
 <ul>
 <li>select ad01codasistenci, ad38creatinina, ad38superfcorp, ad38potasio, ad38peso, ad38altura, ad38fecinicio, count(ad38fecadd) from ad3800 group by ad01codasistenci, ad38creatinina, ad38superfcorp, ad38potasio, ad38peso, ad38altura, ad38fecinicio having count (ad38fecadd) > 2</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>MARCAS PREFERENTES DE DISPENSACIÓN</h3>
+<h3>Marcas preferentes de dispensación</h3>
 <ul>
 <li><strong>PR CON MÁS DE UNA MARCA PREFERENTE DE DISPENSACIÓN:</strong> select a.frp10idpresentacion, FR04ENTIDAD,count(1) from frp2300 a group by a.frp10idpresentacion,FR04ENTIDAD having count(1)>1</li>
 <br>
@@ -1581,7 +1581,7 @@ commit;</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>USUARIOS GENÉRICOS</h3>
+<h3>Usuarios genéricos</h3>
 <ul>
 <li>scm50h - Savac2022</li>
 <li>jgb04x - 1Lunes00</li>
@@ -1591,7 +1591,7 @@ commit;</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>COMPARACIÓN JERARQUÍA MARCA Y PRESENTACIÓN</h3>
+<h3>Comparación jerarquía marca y presentación</h3>
 <ul>
 <li>select distinct m.fch50idproduct, m.fch50desproduct, m.fch50codint, m.fch50codnat, p.fch50desproduct, p.fch50codint,
 decode(m.fch02iddf,p.fch02iddf,'s','n') FF,
@@ -1611,14 +1611,14 @@ and m.fch50idproduct = 25041</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>APORTA PACIENTE</h3>
+<h3>Aporta paciente</h3>
 <ul>
 <li>Los productos marcados como APORTA PACIENTE nunca salen en el carro, da igual como tenga el check NSC.</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>PETICIONES BOTIQUINES/PACTOS REALIZADAS DESDE SAVAC</h3>
+<h3>Peticiones botiquines/pactos realizadas desde savac</h3>
 <ul>
 <li>select 
 count(1), b.ad02desdpto, a.SG02COD_ADD
@@ -1635,7 +1635,7 @@ group by b.ad02desdpto, a.SG02COD_ADD</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>TOMAS ADMINISTRADAS</h3>
+<h3>Tomas administradas</h3>
 <ul>
 <li>select c.pac01mrn,b.PET53PLANDATE,PET53DOSEDES,DECODE(EST05IDVALUE_SMT,58,'ADMINISTRADO',57,'NO',59,'EN PAUSA',153,'SUSPENDIDA'),d.pet01idline,ORG06DESCLOCATION
 from pet5100 a,pet5301j b,pac0100 c,pet0100 d,adm1100 e,org0700 f,org0600 g,pet0200 h
@@ -1684,7 +1684,7 @@ and b.PET51SWTPRN=0
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>CREDENCIALES HOSPITALES</h3>
+<h3>Credenciales hospitales</h3>
 <ul>
 <li><strong>HPRA:</strong> a-savac - Madrid4267 y usuario</li>
 <li><strong>HMM:</strong> soportesavac - ozaraen.Q1 y a6soporte - SoporteNivel1</li>
@@ -1702,7 +1702,7 @@ and b.PET51SWTPRN=0
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>ETIQUETAS URGENTES</h3>
+<h3>Etiquetas urgentes</h3>
 <ul>
 <li>^CI28
 ^CF0,25
@@ -1728,14 +1728,14 @@ and b.PET51SWTPRN=0
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>INACTIVIDAD MIRA/MOBILE/BDCM</h3>
+<h3>Inactividad mira/mobile/bdcm</h3>
 <ul>
 <li>select rowid, a.* from seg2500 a where SEG25CODPARAM in ('OFFTIME','OFFTIMEM') ---valor en minutos</li>
 </ul>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>PROCESO/ASISTENCIA A PARTIR DEL NHC</h3>
+<h3>Proceso/asistencia a partir del nhc</h3>
 <ul>
 <li>select ci21codpersona, a.ad01codasistenci, c.ad02coddpto, ad01fecinicio, a.ad07codproceso--, a.*
 from ad1500 a, ad0100 b, ad0500 c
@@ -1746,7 +1746,7 @@ and b.ad01codasistenci=c.ad01codasistenci</li>
 </div>
 
 <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="carat-d" data-inset="true">
-<h3>EPISODIO ACTIVO NO PR04C</h3>
+<h3>Episodio activo no pr04c</h3>
 <ul>
 <li>SET DEFINE OFF;
 Insert into PR.PR0400
